@@ -166,6 +166,7 @@ a {
 }
 
 .header .container .carousel .btn {
+    cursor: pointer;
     padding: 5px;
     transform: translateY(-50%);
     z-index: 3;
@@ -229,4 +230,83 @@ a {
 
 .header .container .right-side button * {
     color: #7b04df;
+}
+
+.main {
+    background: #f1f1f9;
+    margin-top: 25px;
+    height: auto;
+}
+
+.main h2 {
+    padding: 25px 0;
+}
+
+.main h3 {
+    font-weight: 400;
+}
+
+.main h2, .main h3 {
+    font-size: 16px;
+}
+
+.main .container-item {
+    width: 100%;
+}
+
+.main .container-item .items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main .container-item .items .item {
+    width: 330px;
+    padding: 15px;
+    background: white;
+}
+
+.main .container-item .items .item .head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main .container-item .items .item .head_img {
+    border: 1px solid #c1c1d4;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+}
+
+.main .container-item .items .item h3 {
+    padding-left: 10px;
+}
+
+.main .container-item .items .item .content {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.main .container-item .items .item .content a:hover {
+    text-decoration: underline;
+}
+
+.main .container-item .items .item .content .product_img {
+    width: 94px;
+    height: 94px;
+}
+
+.main .container-item .items .item .content .old-price {
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+.main .container-item .items .item .content .sale {
+    font-weight: 600;
+    color: red;
 }
