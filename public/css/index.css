@@ -1,0 +1,232 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.block {
+    padding: 0 300px;
+}
+
+.header {
+    margin-top: 25px;
+}
+
+.header .nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .nav .item {
+    height: 40px;
+}
+
+.header .nav .logo {
+    cursor: pointer;
+    width: 100px;
+}
+
+.header .nav .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.header .search {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+.header .search form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #c1c1d4;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.header .search form * {
+    height: 40px;
+    border: none;
+}
+
+.header .search form label {
+    width: 100%;
+}
+
+.header .search form label input {
+    padding-left: 10px;
+    width: 100%;
+}
+
+.header .search form label input:focus {
+    outline: none;
+}
+
+.header .nav .mic {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.header .nav .mic img {
+    height: 100%;
+}
+
+.header .nav .findBtn {
+    width: 82px;
+    font-weight: 600;
+    color: #7d7d91;
+    border-right: 1px solid #f1f1f9;
+}
+
+.header .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .nav .btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 92px;
+    height: 40px;
+}
+
+.header .nav .btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.header .container {
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+    overflow: hidden;
+    height: 400px;
+}
+
+.header .container .left-side div:first-child a {
+    color: blue;
+}
+
+.header .container .left-side div:nth-child(2) a {
+    color: blue;
+}
+
+.header .container .left-side .item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+    max-width: 250px;
+}
+
+.header .container .left-side .item img {
+    width: 15px;
+    height: 15px;
+}
+
+.header .container .carousel {
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.header .container .carousel .slider-wrapper {
+    transition-duration: 0.5s;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.header .container .carousel .slider-wrapper .img {
+    min-width: 100%;
+    height: 100%;
+}
+
+.header .container .carousel .slider-wrapper .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.header .container .carousel .btn {
+    padding: 5px;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    top: 50%;
+    background: white;
+}
+
+.header .container .carousel .btn img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 60%;
+    height: 60%;
+}
+
+.header .container .carousel .btn-left {
+    left: 10px;
+}
+
+.header .container .carousel .btn-left img {
+    transform: translate(-50%, -50%) rotate(180deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.header .container .carousel .btn-right {
+    right: 10px;
+}
+
+.header .container .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    border: 1px solid #c1c1d4;
+    border-radius: 8px;
+}
+
+.header .container .right-side * {
+    font-weight: 700;
+    margin: 20px;
+}
+
+.header .container .right-side div {
+    font-size: 18px;
+}
+
+.header .container .right-side button {
+    border: 1px solid #7b04df;
+    border-radius: 8px;
+    background: none;
+    padding: 10px;
+}
+
+.header .container .right-side button * {
+    color: #7b04df;
+}
