@@ -13,6 +13,7 @@ a {
     padding: 0 300px;
 }
 
+/* header block */
 .header {
     margin-top: 25px;
 }
@@ -94,7 +95,7 @@ a {
     align-items: center;
 }
 
-.header .nav .btn {
+.header .nav .btn-head {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -103,7 +104,7 @@ a {
     height: 40px;
 }
 
-.header .nav .btn img {
+.header .nav .btn-head img {
     width: 24px;
     height: 24px;
 }
@@ -135,6 +136,18 @@ a {
     max-width: 250px;
 }
 
+.header .container .left-side .item:hover {
+    padding-left: 10px;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    color: white;
+    background: purple;
+}
+
+.header .container .left-side .item:hover * {
+    color: white;
+}
+
 .header .container .left-side .item img {
     width: 15px;
     height: 15px;
@@ -147,7 +160,7 @@ a {
     border-radius: 8px;
 }
 
-.header .container .carousel .slider-wrapper {
+.slider-wrapper {
     transition-duration: 0.5s;
     position: relative;
     display: flex;
@@ -155,17 +168,17 @@ a {
     height: 100%;
 }
 
-.header .container .carousel .slider-wrapper .img {
+.slider-wrapper .img {
     min-width: 100%;
     height: 100%;
 }
 
-.header .container .carousel .slider-wrapper .img img {
+.slider-wrapper .img img {
     width: 100%;
     height: 100%;
 }
 
-.header .container .carousel .btn {
+.btn {
     cursor: pointer;
     padding: 5px;
     transform: translateY(-50%);
@@ -179,7 +192,7 @@ a {
     background: white;
 }
 
-.header .container .carousel .btn img {
+.btn img {
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -188,18 +201,18 @@ a {
     height: 60%;
 }
 
-.header .container .carousel .btn-left {
+.btn-left {
     left: 10px;
 }
 
-.header .container .carousel .btn-left img {
+.btn-left img {
     transform: translate(-50%, -50%) rotate(180deg);
     position: absolute;
     left: 50%;
     top: 50%;
 }
 
-.header .container .carousel .btn-right {
+.btn-right {
     right: 10px;
 }
 
@@ -232,6 +245,7 @@ a {
     color: #7b04df;
 }
 
+/* main block */
 .main {
     background: #f1f1f9;
     margin-top: 25px;
@@ -254,26 +268,31 @@ a {
     width: 100%;
 }
 
-.main .container-item .items {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+/* most-popular */
+
+.main .most-popular .items {
+    overflow: hidden;
+    position: relative;
 }
 
-.main .container-item .items .item {
+.main .most-popular .slider-wrapper {
+    grid-gap: 10px;
+}
+
+.main .most-popular .items .item {
     width: 330px;
     padding: 15px;
     background: white;
+    border-radius: 8px;
 }
 
-.main .container-item .items .item .head {
+.main .most-popular .items .item .head {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.main .container-item .items .item .head_img {
+.main .most-popular .items .item .head_img {
     border: 1px solid #c1c1d4;
     border-radius: 50%;
     width: 24px;
@@ -281,32 +300,61 @@ a {
     padding: 10px;
 }
 
-.main .container-item .items .item h3 {
+.main .most-popular .items .item h3 {
     padding-left: 10px;
 }
 
-.main .container-item .items .item .content {
+.main .most-popular .items .item .content {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     margin-top: 10px;
     justify-content: space-between;
 }
 
-.main .container-item .items .item .content a:hover {
+.main .most-popular .items .item .content a:hover {
     text-decoration: underline;
 }
 
-.main .container-item .items .item .content .product_img {
+.main .most-popular .items .item .content .product_img {
     width: 94px;
     height: 94px;
+    border: 1px solid #c1c1d4;
+    border-radius: 8px;
 }
 
-.main .container-item .items .item .content .old-price {
-    font-size: 10px;
+.main .most-popular .items .item .content .old-price {
+    font-size: 12px;
+    color: #acacbe;
     text-decoration: line-through;
 }
 
-.main .container-item .items .item .content .sale {
+.main .most-popular .items .item .content .sale {
     font-weight: 600;
     color: red;
+}
+
+/* hope-you */
+.main .hope-you .items .slider-wrapper {
+    grid-gap: 20px;
+}
+
+.main .hope-you .item {
+    width: 120px;
+    height: 170px;
+}
+
+.main .hope-you .item .product_img {
+    width: 120px;
+    height: 120px;
+}
+
+.main .hope-you .item .product_img img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.main .hope-you .item .product_name {
+    margin-top: 10px;
+    text-align: center;
 }

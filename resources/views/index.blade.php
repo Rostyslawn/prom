@@ -27,15 +27,15 @@
                 </form>
             </div>
             <div class="item buttons">
-                <a href="{{route('login')}}" class="btn login">
+                <a href="{{route('login')}}" class="btn-head login">
                     <img src="{{asset('imgs/login.png')}}" alt="login">
                     <div>Увiйти</div>
                 </a>
-                <a href="{{route('likes')}}" class="btn likes">
+                <a href="{{route('likes')}}" class="btn-head likes">
                     <img src="{{asset('imgs/likes.png')}}" alt="likes">
                     <div>Бажане</div>
                 </a>
-                <a href="{{route('cart')}}" class="btn cart">
+                <a href="{{route('cart')}}" class="btn-head cart">
                     <img src="{{asset('imgs/cart.png')}}" alt="cart">
                     <div>Кошик</div>
                 </a>
@@ -51,51 +51,51 @@
                 </div>
                 <div class="item">
                     <a href="#">Красата та здоров'я</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Дiм i сад</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Одяг та взуття</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Технiка та електронiка</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Товари для дiтей</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Авто-, мото</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Подарунки, хобi, книги</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Аксесуари та прикраси</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Матерiали для ремонту</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Спорт i вiдпочинок</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Медикаменти та медичнi товари</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
                 <div class="item">
                     <a href="#">Домашнi тварини та зоотовари</a>
-                    <div><img alt="arrow" src="{{asset('imgs/arrow.png')}}"></div>
+                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
                 </div>
             </div>
             <div class="carousel">
@@ -123,76 +123,169 @@
             <div class="most-popular container-item">
                 <h2>Часто купують</h2>
                 <div class="items">
-                    <div class="item">
-                        <div class="head">
-                            <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                            <h3>Невидимки i шпильки</h3>
+                    <div class="slider-wrapper">
+                        <div class="btn btn-left">
+                            <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
                         </div>
-                        <div class="content">
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
+                        <div class="item">
+                            <div class="head">
+                                <img class="head_img" src="{{asset('imgs/cart.png')}}">
+                                <h3>Невидимки i шпильки</h3>
                             </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
+                            <div class="content">
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="old-price">10 ₴</div>
+                                    <div class="sale">9 ₴</div>
+                                </div>
                             </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="old-price">10 ₴</div>
-                                <div class="sale">9 ₴</div>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img class="head_img" src="{{asset('imgs/cart.png')}}">
+                                <h3>Невидимки i шпильки</h3>
                             </div>
+                            <div class="content">
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="old-price">10 ₴</div>
+                                    <div class="sale">9 ₴</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img class="head_img" src="{{asset('imgs/cart.png')}}">
+                                <h3>Невидимки i шпильки</h3>
+                            </div>
+                            <div class="content">
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="old-price">10 ₴</div>
+                                    <div class="sale">9 ₴</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img class="head_img" src="{{asset('imgs/cart.png')}}">
+                                <h3>Невидимки i шпильки</h3>
+                            </div>
+                            <div class="content">
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="old-price">10 ₴</div>
+                                    <div class="sale">9 ₴</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img class="head_img" src="{{asset('imgs/cart.png')}}">
+                                <h3>Невидимки i шпильки</h3>
+                            </div>
+                            <div class="content">
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="price">10 ₴</div>
+                                </div>
+                                <div class="product">
+                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
+                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
+                                    <div class="old-price">10 ₴</div>
+                                    <div class="sale">9 ₴</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn btn-right">
+                            <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="head">
-                            <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                            <h3>Невидимки i шпильки</h3>
+                </div>
+            </div>
+            <h2>Тебе зацiкавить</h2>
+            <div class="hope-you container-item">
+                <div class="items">
+                    <div class="slider-wrapper">
+                        <div class="btn btn-left">
+                            <img src="{{asset('imgs/arrow.png')}}" alt="swap to left">
                         </div>
-                        <div class="content">
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
-                            </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
-                            </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="old-price">10 ₴</div>
-                                <div class="sale">9 ₴</div>
+                        <div class="item">
+                            <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
+                            <div class="product_name">
+                                Невидимки i шпильки
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="head">
-                            <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                            <h3>Невидимки i шпильки</h3>
+                        <div class="item">
+                            <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
+                            <div class="product_name">
+                                Невидимки i шпильки
+                            </div>
                         </div>
-                        <div class="content">
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
+                        <div class="item">
+                            <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
+                            <div class="product_name">
+                                Невидимки i шпильки
                             </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
+                        </div>
+                        <div class="item">
+                            <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
+                            <div class="product_name">
+                                Невидимки i шпильки
                             </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="old-price">10 ₴</div>
-                                <div class="sale">9 ₴</div>
-                            </div>
+                        </div>
+                        <div class="btn btn-right">
+                            <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                         </div>
                     </div>
                 </div>
