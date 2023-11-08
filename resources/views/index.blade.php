@@ -277,7 +277,7 @@
                 <div class="items">
                     <div class="item">
                         <img src="{{asset('imgs/govno.jpg')}}" alt="product" class="product_img">
-                        <div class="price">10 ₴</div>
+                        <div class="price">11 ₴</div>
                         <div class="product_name">
                             <a href="#">Product name</a>
                         </div>
