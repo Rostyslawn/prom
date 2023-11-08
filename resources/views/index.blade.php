@@ -263,29 +263,63 @@
                         <div class="item">
                             <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
                             <div class="product_name">
-                                Невидимки i шпильки
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
-                            <div class="product_name">
-                                Невидимки i шпильки
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
-                            <div class="product_name">
-                                Невидимки i шпильки
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
-                            <div class="product_name">
-                                Невидимки i шпильки
+                                <a href="#">Невидимки i шпильки</a>
                             </div>
                         </div>
                         <div class="btn btn-right">
                             <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Для тебе</h2>
+            <div class="for-you container-item">
+                <div class="items">
+                    <div class="item">
+                        <img src="{{asset('imgs/govno.jpg')}}" alt="product" class="product_img">
+                        <div class="price">10 ₴</div>
+                        <div class="product_name">
+                            <a href="#">Product name</a>
+                        </div>
+                        <div class="buttons">
+                            <button>Купити</button>
+                            <img src="{{asset('imgs/likes.png')}}" alt="like" class="like">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{asset('imgs/govno.jpg')}}" alt="product" class="product_img">
+                        <div class="old-price">10 ₴</div>
+                        <div class="sale">9 ₴</div>
+                        <div class="product_name">
+                            <a href="#">Product name</a>
+                        </div>
+                        <div class="buttons">
+                            <button>Купити</button>
+                            <img src="{{asset('imgs/likes.png')}}" alt="like" class="like">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{asset('imgs/govno.jpg')}}" alt="product" class="product_img">
+                        <div class="old-price">10 ₴</div>
+                        <div class="sale">9 ₴</div>
+                        <div class="product_name">
+                            <a href="#">Product name</a>
+                        </div>
+                        <div class="buttons">
+                            <button>Купити</button>
+                            <img src="{{asset('imgs/likes.png')}}" alt="like" class="like">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{asset('imgs/govno.jpg')}}" alt="product" class="product_img">
+                        <div class="old-price">10 ₴</div>
+                        <div class="sale">9 ₴</div>
+                        <div class="product_name">
+                            <a href="#">Product name</a>
+                        </div>
+                        <div class="buttons">
+                            <button>Купити</button>
+                            <img src="{{asset('imgs/likes.png')}}" alt="like" class="like">
                         </div>
                     </div>
                 </div>
