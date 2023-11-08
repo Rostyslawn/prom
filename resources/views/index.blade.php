@@ -8,39 +8,39 @@
     <link rel="icon" href="{{asset('imgs/icon.jpg')}}">
 </head>
 <body>
-    <div class="header block">
-        <div class="nav">
-            <div class="item logo">
-                <img src="{{asset('imgs/logo.png')}}" alt="logo">
-            </div>
-            <div class="item search">
-                <form method="post" action="">
-                    <label>
-                        <input placeholder="я шукаю...">
-                    </label>
-                    <div class="mic">
-                        <img src="{{asset('imgs/mic.png')}}" alt="microphone">
-                    </div>
-                    <button class="findBtn">
-                        Знайти
-                    </button>
-                </form>
-            </div>
-            <div class="item buttons">
-                <a href="{{route('login')}}" class="btn-head login">
-                    <img src="{{asset('imgs/login.png')}}" alt="login">
-                    <div>Увiйти</div>
-                </a>
-                <a href="{{route('likes')}}" class="btn-head likes">
-                    <img src="{{asset('imgs/likes.png')}}" alt="likes">
-                    <div>Бажане</div>
-                </a>
-                <a href="{{route('cart')}}" class="btn-head cart">
-                    <img src="{{asset('imgs/cart.png')}}" alt="cart">
-                    <div>Кошик</div>
-                </a>
-            </div>
+    <div class="nav block">
+        <div class="item logo">
+            <img src="{{asset('imgs/logo.png')}}" alt="logo">
         </div>
+        <div class="item search">
+            <form method="post" action="">
+                <label>
+                    <input placeholder="я шукаю...">
+                </label>
+                <div class="mic">
+                    <img src="{{asset('imgs/mic.png')}}" alt="microphone">
+                </div>
+                <button class="findBtn">
+                    Знайти
+                </button>
+            </form>
+        </div>
+        <div class="item buttons">
+            <a href="{{route('login')}}" class="btn-head login">
+                <img src="{{asset('imgs/login.png')}}" alt="login">
+                <div>Увiйти</div>
+            </a>
+            <a href="{{route('likes')}}" class="btn-head likes">
+                <img src="{{asset('imgs/likes.png')}}" alt="likes">
+                <div>Бажане</div>
+            </a>
+            <a href="{{route('cart')}}" class="btn-head cart">
+                <img src="{{asset('imgs/cart.png')}}" alt="cart">
+                <div>Кошик</div>
+            </a>
+        </div>
+    </div>
+    <div class="header block">
         <div class="container">
             <div class="left-side categories">
                 <div class="item">
@@ -326,5 +326,6 @@
             </div>
         </div>
     </div>
+{{--<script src="{{asset('js/carousel.js')}}"></script>--}}
 </body>
 </html>

@@ -17,7 +17,7 @@ class ProductsSeeder extends Seeder
 
         for($i = 0; $i < 5; $i++) {
             DB::table('products')->insert([
-                ['name' => $i, 'description' => 'just a product', 'img' => '#', 'amount' => 1, 'likes' => 0]
+                ['name' => 'product ' . $i, 'description' => 'just a product', 'img' => '#', 'amount' => 1, 'likes' => 0]
             ]);
         }
     }

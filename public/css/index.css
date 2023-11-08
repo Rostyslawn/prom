@@ -17,89 +17,96 @@ button {
     cursor: pointer;
 }
 
-/* header block */
-.header {
-    margin-top: 25px;
-}
+/* nav block */
 
-.header .nav {
+/* fix margins, justify-content */
+.nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    background: white;
+    z-index: 99;
 }
 
-.header .nav .item {
+.nav .item {
     height: 40px;
 }
 
-.header .nav .logo {
+.nav .logo {
     cursor: pointer;
     width: 100px;
 }
 
-.header .nav .logo img {
+.nav .logo img {
     width: 100%;
     height: 100%;
 }
 
-.header .search {
+.nav .search {
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 40%;
 }
 
-.header .search form {
+.nav .search form {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
+    height: 40px;
     border: 1px solid #c1c1d4;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.header .search form * {
-    height: 40px;
+.nav .search form * {
     border: none;
 }
 
-.header .search form label {
+.nav .search form label {
     width: 100%;
 }
 
-.header .search form label input {
+.nav .search form label input {
     padding-left: 10px;
     width: 100%;
 }
 
-.header .search form label input:focus {
+.nav .search form label input:focus {
     outline: none;
 }
 
-.header .nav .mic {
+.nav .mic {
+    object-fit: cover;
     cursor: pointer;
     width: 24px;
     height: 24px;
 }
 
-.header .nav .mic img {
+.nav .mic img {
+    width: 100%;
     height: 100%;
 }
 
-.header .nav .findBtn {
+.nav .findBtn {
     width: 82px;
+    height: 40px;
     font-weight: 600;
     color: #7d7d91;
     border-right: 1px solid #f1f1f9;
 }
 
-.header .buttons {
+.nav .buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.header .nav .btn-head {
+.nav .btn-head {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -108,9 +115,14 @@ button {
     height: 40px;
 }
 
-.header .nav .btn-head img {
+.nav .btn-head img {
     width: 24px;
     height: 24px;
+}
+
+/* header block */
+.header {
+    margin-top: 25px;
 }
 
 .header .container {
@@ -118,7 +130,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
     overflow: hidden;
     height: 400px;
 }
