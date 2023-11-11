@@ -18,7 +18,6 @@ button {
 }
 
 /* nav block */
-
 /* fix margins, justify-content */
 .nav {
     width: 100%;
@@ -269,16 +268,21 @@ button {
     height: auto;
 }
 
-.main h2 {
-    padding: 25px 0;
-}
-
 .main h3 {
     font-weight: 400;
 }
 
 .main h2, .main h3 {
     font-size: 16px;
+}
+
+.main h2:first-child {
+    margin-top: 25px;
+}
+
+.main .container {
+    display: grid;
+    grid-gap: 25px;
 }
 
 .main .container-item {
@@ -423,4 +427,92 @@ button {
     cursor: pointer;
     width: 28px;
     height: 28px;
+}
+
+/* show-more button */
+.main .show-more {
+    font-weight: 700;
+    color: #7b04df;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #7b04df;
+    border-radius: 8px;
+}
+
+/* fix background */
+.main .show-more:hover {
+    transition: 0.3s;
+}
+
+/* what-find block */
+/* fix item width */
+.main .what-find .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    height: 60px;
+    background: white;
+    border-radius: 8px;
+}
+
+.main .what-find .item a {
+    padding: 10px;
+    color: blue;
+}
+
+/* main footer block */
+.main .container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px;
+    background: white;
+    height: 100px;
+}
+
+.main .container-footer .img {
+    width: 100px;
+    height: 100px;
+}
+
+.main .container-footer .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .container-footer .left-side {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.main .container-footer .left-side h3 {
+    font-weight: 700;
+}
+
+.main .container-footer .left-side span {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 25px;
+    margin-left: 25px;
+}
+
+.main .container-footer .left-side span button {
+    border: none;
+    border-radius: 8px;
+    background: #7b04df;
+    color: white;
+    width: 120px;
+    height: 40px;
+}
+
+.main .container-footer .left-side span button:hover {
+    /*background: ;*/
+}
+
+.main .container-footer .right-side {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }

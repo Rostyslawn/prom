@@ -120,8 +120,8 @@
     </div>
     <div class="main">
         <div class="container block">
+            <h2>Часто купують</h2>
             <div class="most-popular container-item">
-                <h2>Часто купують</h2>
                 <div class="items">
                     <div class="slider-wrapper">
                         <div class="btn btn-left">
@@ -130,7 +130,7 @@
                         <div class="item">
                             <div class="head">
                                 <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                                <h3>Невидимки i шпильки</h3>
+                                <h3><a href="#">Невидимки i шпильки</a></h3>
                             </div>
                             <div class="content">
                                 <div class="product">
@@ -154,7 +154,7 @@
                         <div class="item">
                             <div class="head">
                                 <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                                <h3>Невидимки i шпильки</h3>
+                                <h3><a href="#">Невидимки i шпильки</a></h3>
                             </div>
                             <div class="content">
                                 <div class="product">
@@ -178,7 +178,7 @@
                         <div class="item">
                             <div class="head">
                                 <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                                <h3>Невидимки i шпильки</h3>
+                                <h3><a href="#">Невидимки i шпильки</a></h3>
                             </div>
                             <div class="content">
                                 <div class="product">
@@ -202,31 +202,7 @@
                         <div class="item">
                             <div class="head">
                                 <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                                <h3>Невидимки i шпильки</h3>
-                            </div>
-                            <div class="content">
-                                <div class="product">
-                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                    <div class="price">10 ₴</div>
-                                </div>
-                                <div class="product">
-                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                    <div class="price">10 ₴</div>
-                                </div>
-                                <div class="product">
-                                    <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                    <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                    <div class="old-price">10 ₴</div>
-                                    <div class="sale">9 ₴</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="head">
-                                <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                                <h3>Невидимки i шпильки</h3>
+                                <h3><a href="#">Невидимки i шпильки</a></h3>
                             </div>
                             <div class="content">
                                 <div class="product">
@@ -322,6 +298,28 @@
                             <img src="{{asset('imgs/likes.png')}}" alt="like" class="like">
                         </div>
                     </div>
+                </div>
+            </div>
+            <button class="show-more container-item"><span>Показати ще</span></button>
+            <h2>Що шукають</h2>
+            <div class="what-find container-item">
+                <div class="items">
+                    <div class="item">
+                        <a href="#">Текст</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container-footer container-item">
+                <div class="left-side">
+                    <div class="img"><img alt="want to sale?" src="{{asset('imgs/PromFavoriteStore.svg')}}"></div>
+                    <span>
+                        <h3>Хочете продавати на промi?</h3>
+                        <button class="start-todayBtn">Почнiть сьогоднi</button>
+                    </span>
+                </div>
+                <div class="right-side">
+                    <a href="#">Перейти в кабінет компанії</a>
+                    <a href="#">Перейти в особистий кабiнет</a>
                 </div>
             </div>
         </div>
