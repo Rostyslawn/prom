@@ -17,14 +17,26 @@ button {
     cursor: pointer;
 }
 
-/* nav block */
-/* fix margins, justify-content */
-.nav {
+/* ad */
+.ad {
     width: 100%;
-    position: fixed;
+    height: 40px;
+}
+
+.ad img {
+    width: 100%;
+    height: 100%;
+}
+
+/* nav block */
+.nav {
+    position: sticky;
     top: 0;
     left: 0;
-    display: flex;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     background: white;
     z-index: 99;
@@ -37,6 +49,7 @@ button {
 .nav .logo {
     cursor: pointer;
     width: 100px;
+    margin-right: 25px;
 }
 
 .nav .logo img {
@@ -47,7 +60,7 @@ button {
 .nav .search {
     display: flex;
     align-items: center;
-    width: 40%;
+    width: 100%;
 }
 
 .nav .search form {
@@ -129,17 +142,16 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /*margin-top: 25px;*/
     overflow: hidden;
     height: 400px;
 }
 
 .header .container .left-side div:first-child a {
-    color: blue;
+    color: #0670eb;
 }
 
 .header .container .left-side div:nth-child(2) a {
-    color: blue;
+    color: #0670eb;
 }
 
 .header .container .left-side .item {
@@ -391,6 +403,9 @@ button {
 }
 
 .main .for-you .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: 8px;
     background: white;
     padding: 10px;
@@ -402,10 +417,10 @@ button {
 }
 
 .main .for-you .product_name {
-    padding: 5px 0;
+    height: 60px;
+    padding: 12px 0;
 }
 
-/* fix margin-bottom */
 .main .for-you .buttons {
     display: flex;
     align-items: center;
@@ -445,7 +460,12 @@ button {
 }
 
 /* what-find block */
-/* fix item width */
+.main .what-find .items {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 15px;
+}
+
 .main .what-find .item {
     display: flex;
     align-items: center;
@@ -458,7 +478,7 @@ button {
 
 .main .what-find .item a {
     padding: 10px;
-    color: blue;
+    color: #0670eb;
 }
 
 /* main footer block */
@@ -520,7 +540,7 @@ button {
 }
 
 .main .container-footer .right-side a {
-    color: blue;
+    color: #0670eb;
 }
 
 /* footer block */
