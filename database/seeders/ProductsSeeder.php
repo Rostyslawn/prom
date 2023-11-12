@@ -15,9 +15,9 @@ class ProductsSeeder extends Seeder
     {
         DB::statement("truncate table products");
 
-        for($i = 0; $i < 5; $i++) {
+        for($i = 0; $i < 10; $i++) {
             DB::table('products')->insert([
-                ['name' => 'product ' . $i, 'description' => 'just a product', 'img' => '#', 'amount' => 1, 'likes' => 0]
+                ['name' => 'product ' . $i, 'description' => 'just a product', 'img' => '#', 'price' => $i, 'sale' => $i-1, 'amount' => 1, 'likes' => 0]
             ]);
         }
     }
