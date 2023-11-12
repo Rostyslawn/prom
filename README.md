@@ -35,3 +35,5 @@ To run the project, follow these steps:
 After completing these steps, your project will be up and running. You can access the project at the address provided by the `php artisan serve` command.
 
 Please make sure you have Composer installed and have configured your Laravel environment before proceeding.
+
+Author: Rostyslawn02
