@@ -36,4 +36,8 @@ After completing these steps, your project will be up and running. You can acces
 
 Please make sure you have Composer installed and have configured your Laravel environment before proceeding.
 
+**Project Description:**
+
+This project is a clone of the promua website.
+
 Author: Rostyslawn02
