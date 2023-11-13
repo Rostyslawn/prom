@@ -1,3 +1,7 @@
+## Requirements
+
+This repository contains a project created using the Laravel framework, and to successfully run it, you will need to install XAMPP and Laravel.
+
 ## Running the Project
 
 To run the project, follow these steps:
