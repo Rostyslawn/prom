@@ -130,102 +130,28 @@
                     <div class="btn btn-left">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
                     </div>
-                    <div class="item">
-                        <div class="head">
-                            <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                            <h3><a href="#">Невидимки i шпильки</a></h3>
-                        </div>
-                        <div class="content">
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
+                    @for($i = 0; $i < 10; $i++)
+                        <div class="item">
+                            <div class="head">
+                                <img class="head_img" src="{{asset('imgs/cart.png')}}">
+                                <h3><a href="#">Невидимки i шпильки</a></h3>
                             </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
-                            </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="old-price">10 ₴</div>
-                                <div class="sale">9 ₴</div>
+                            <div class="content">
+                                @for($i = 0; $i < 3; $i++)
+                                    <div class="product">
+                                        <img class="product_img" alt="product" src="{{asset('imgs/' . $allProducts[$i]["img"])}}">
+                                        <div class="product_name"><a href="#">{{ $allProducts[$i]["name"] }}</a></div>
+                                        @if($allProducts[$i]["sale"] == 0)
+                                            <div class="old-price">{{ $allProducts[$i]["price"] }} ₴</div>
+                                            <div class="sale">{{ $allProducts[$i]["sale"] }} ₴</div>
+                                        @else
+                                            <div class="price">{{ $allProducts[$i]["price"] }} ₴</div>
+                                        @endif
+                                    </div>
+                                @endfor
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="head">
-                            <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                            <h3><a href="#">Невидимки i шпильки</a></h3>
-                        </div>
-                        <div class="content">
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
-                            </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
-                            </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="old-price">10 ₴</div>
-                                <div class="sale">9 ₴</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="head">
-                            <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                            <h3><a href="#">Невидимки i шпильки</a></h3>
-                        </div>
-                        <div class="content">
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
-                            </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
-                            </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="old-price">10 ₴</div>
-                                <div class="sale">9 ₴</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="head">
-                            <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                            <h3><a href="#">Невидимки i шпильки</a></h3>
-                        </div>
-                        <div class="content">
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
-                            </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="price">10 ₴</div>
-                            </div>
-                            <div class="product">
-                                <img class="product_img" alt="product" src="{{asset('imgs/govno.jpg')}}">
-                                <div class="product_name"><a href="#">Невидимка-стiкер</a></div>
-                                <div class="old-price">10 ₴</div>
-                                <div class="sale">9 ₴</div>
-                            </div>
-                        </div>
-                    </div>
+                    @endfor
                     <div class="btn btn-right">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                     </div>
@@ -239,14 +165,14 @@
                     <div class="btn btn-left">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to left">
                     </div>
-{{--                fix for to normal loader    --}}
+                    {{--                fix for to normal loader    --}}
                     @for($i = 0; $i < 10; $i++)
-                    <div class="item">
-                        <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
-                        <div class="product_name">
-                            <a href="#">Невидимки i шпильки</a>
+                        <div class="item">
+                            <div class="product_img"><img src="{{asset('imgs/govno.jpg')}}" alt="product"></div>
+                            <div class="product_name">
+                                <a href="#">Невидимки i шпильки</a>
+                            </div>
                         </div>
-                    </div>
                     @endfor
                     <div class="btn btn-right">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
@@ -257,21 +183,21 @@
         <h2>Для тебе</h2>
         <div class="for-you container-item">
             <div class="items">
-{{--            fix for to normal loader   --}}
+                {{--            fix for to normal loader   --}}
                 @for($i = 0; $i < 20; $i++)
-                <div class="item">
-                    <img src="{{asset('imgs/govno.jpg')}}" alt="product" class="product_img">
-                    <div class="head">
-                        <div class="price">11 ₴</div>
-                        <div class="product_name">
-                            <a href="#">Product name</a>
+                    <div class="item">
+                        <img src="{{asset('imgs/govno.jpg')}}" alt="product" class="product_img">
+                        <div class="head">
+                            <div class="price">11 ₴</div>
+                            <div class="product_name">
+                                <a href="#">Product name</a>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button>Купити</button>
+                            <img src="{{asset('imgs/likes.png')}}" alt="like" class="like">
                         </div>
                     </div>
-                    <div class="buttons">
-                        <button>Купити</button>
-                        <img src="{{asset('imgs/likes.png')}}" alt="like" class="like">
-                    </div>
-                </div>
                 @endfor
             </div>
         </div>
