@@ -130,28 +130,30 @@
                     <div class="btn btn-left">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
                     </div>
-                    @for($i = 0; $i < 10; $i++)
+{{--                fix    --}}
+                    @foreach($mostPopularProducts as $product)
                         <div class="item">
                             <div class="head">
-                                <img class="head_img" src="{{asset('imgs/cart.png')}}">
-                                <h3><a href="#">Невидимки i шпильки</a></h3>
+                                <img class="head_img" src="{{$product->img}}">
+                                <h3><a href="#">{{ $product->category_name }}</a></h3>
                             </div>
                             <div class="content">
                                 @for($i = 0; $i < 3; $i++)
                                     <div class="product">
-                                        <img class="product_img" alt="product" src="{{asset('imgs/' . $allProducts[$i]["img"])}}">
-                                        <div class="product_name"><a href="#">{{ $allProducts[$i]["name"] }}</a></div>
-                                        @if($allProducts[$i]["sale"] == 0)
-                                            <div class="old-price">{{ $allProducts[$i]["price"] }} ₴</div>
-                                            <div class="sale">{{ $allProducts[$i]["sale"] }} ₴</div>
+                                        <img class="product_img" alt="product"
+                                             src="{{$product->img}}">
+                                        <div class="product_name"><a href="#">{{ $product->name }}</a></div>
+                                        @if($product->sale)
+                                            <div class="old-price">{{ $product->price }} ₴</div>
+                                            <div class="sale">{{ $product->sale }} ₴</div>
                                         @else
-                                            <div class="price">{{ $allProducts[$i]["price"] }} ₴</div>
+                                            <div class="price">{{ $product->price }} ₴</div>
                                         @endif
                                     </div>
                                 @endfor
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                     <div class="btn btn-right">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                     </div>
