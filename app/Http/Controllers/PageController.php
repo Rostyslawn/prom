@@ -20,9 +20,11 @@ class PageController extends Controller
             ->select("products.*", "categories.name as category_name")
             ->get();
 
+        $categories = $mostPopularProducts->groupBy('category_id');
+
 //        dd($mostPopularProducts);
 
         return view('index')
-            ->with('mostPopularProducts', $mostPopularProducts);
+            ->with('mostPopularProducts', $categories);
     }
 }

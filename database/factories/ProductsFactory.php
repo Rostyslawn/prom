@@ -19,7 +19,7 @@ class ProductsFactory extends Factory
     {
         $faker = \Faker\Factory::create();
         $randomText = $faker->sentence($nbWords = 3, $variableNbWords = true);
-        $randomNums = $faker->numberBetween(1, 60);
+        $randomNums = $faker->numberBetween(1, 20);
         $randomSale = rand(0, 1) ? null : $randomNums;
 
         return [

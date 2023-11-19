@@ -130,30 +130,28 @@
                     <div class="btn btn-left">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
                     </div>
-{{--                fix    --}}
-                    @foreach($mostPopularProducts as $product)
-                        <div class="item">
-                            <div class="head">
-                                <img class="head_img" src="{{$product->img}}">
-                                <h3><a href="#">{{ $product->category_name }}</a></h3>
-                            </div>
-                            <div class="content">
-                                @for($i = 0; $i < 3; $i++)
-                                    <div class="product">
-                                        <img class="product_img" alt="product"
-                                             src="{{$product->img}}">
-                                        <div class="product_name"><a href="#">{{ $product->name }}</a></div>
-                                        @if($product->sale)
-                                            <div class="old-price">{{ $product->price }} ₴</div>
-                                            <div class="sale">{{ $product->sale }} ₴</div>
-                                        @else
-                                            <div class="price">{{ $product->price }} ₴</div>
-                                        @endif
-                                    </div>
-                                @endfor
-                            </div>
-                        </div>
-                    @endforeach
+					@foreach($mostPopularProducts as $categoryId => $products)
+						<div class="item">
+							<div class="head">
+								<img class="head_img" src="{{ $products->first()->img }}">
+								<h3><a href="#">{{ $products->first()->category_name }}</a></h3>
+							</div>
+							<div class="content">
+								@foreach($products->take(3) as $product)
+									<div class="product">
+										<img class="product_img" alt="product" src="{{ $product->img }}">
+										<div class="product_name"><a href="#">{{ $product->name }}</a></div>
+										@if($product->sale)
+											<div class="old-price">{{ $product->price }} ₴</div>
+											<div class="sale">{{ $product->sale }} ₴</div>
+										@else
+											<div class="price">{{ $product->price }} ₴</div>
+										@endif
+									</div>
+								@endforeach
+							</div>
+						</div>
+					@endforeach
                     <div class="btn btn-right">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                     </div>
