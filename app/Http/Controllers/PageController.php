@@ -15,6 +15,12 @@ class PageController extends Controller
 //            ->get();
 //        dd($mostPopularProducts);
 
+        $mostPopularProducts = Products::limit(30)
+            ->leftJoin("categories", "categories.id", "products.category_id")
+            ->select("products.*", "categories.name as category_name")
+            ->get();
+
+//        dd($mostPopularProducts);
 
         return view('index')
             ->with('mostPopularProducts', $mostPopularProducts);
