@@ -19,7 +19,7 @@ class CategoryFactory extends Factory
         // Creating faker
         $faker = \Faker\Factory::create();
         $randomText = $faker->sentence($nbWords = 3, $variableNbWords = true);
-        $randomNums = $faker->numberBetween(1, 60);
+        $randomNums = $faker->numberBetween(1, 50);
 
         // Write random names for table Category and write random sort
         return [

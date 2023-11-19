@@ -14,7 +14,7 @@ class ProductsSeeder extends Seeder
      */
     public function run(): void
     {
-        Products::factory()->times(60)->create();
+        Products::factory()->times(1000)->create();
 
 //        DB::statement("truncate table products");
 //

@@ -15,16 +15,16 @@ class PageController extends Controller
 //            ->get();
 //        dd($mostPopularProducts);
 
-        $mostPopularProducts = Products::limit(30)
-            ->leftJoin("categories", "categories.id", "products.category_id")
+        $products = Products::leftJoin("categories", "categories.id", "products.category_id")
             ->select("products.*", "categories.name as category_name")
+            ->distinct()
             ->get();
 
-        $categories = $mostPopularProducts->groupBy('category_id');
+        $categories = $products->groupBy('category_id');
 
 //        dd($mostPopularProducts);
 
         return view('index')
-            ->with('mostPopularProducts', $categories);
+            ->with('AllProducts', $categories);
     }
 }
