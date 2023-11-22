@@ -130,7 +130,7 @@
                     <div class="btn btn-left">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
                     </div>
-                    @foreach($AllProducts as $categoryId => $products)
+                    @foreach($AllProducts->take(20) as $categoryId => $products)
                         <div class="item">
                             <div class="head">
                                 <img class="head_img" src="{{ $products->first()->img }}">
@@ -167,18 +167,18 @@
                     </div>
                     @foreach($AllProducts as $categoryId => $products)
                         @php
-                            $uniqueProducts = $products->unique('id')->take(10);
+                            $uniqueProducts = $products->unique('id')->take(20);
                         @endphp
-                        @foreach($uniqueProducts as $product)
-                            <div class="item">
-                                <div class="product_img">
-                                    <img src="{{$product->img}}" alt="product">
-                                </div>
-                                <div class="product_name">
-                                    <a href="#">{{$product->name}}</a>
-                                </div>
+                    @endforeach
+                    @foreach($uniqueProducts as $product)
+                        <div class="item">
+                            <div class="product_img">
+                                <img src="{{$product->img}}" alt="product">
                             </div>
-                        @endforeach
+                            <div class="product_name">
+                                <a href="#">{{$product->name}}</a>
+                            </div>
+                        </div>
                     @endforeach
                     <div class="btn btn-right">
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
@@ -189,14 +189,23 @@
         <h2>Для тебе</h2>
         <div class="for-you container-item">
             <div class="items">
-                {{--            fix for to normal loader   --}}
-                @for($i = 0; $i < 20; $i++)
+                @foreach($AllProducts as $categoryId => $products)
+                    @php
+                        $uniqueProducts = $products->unique('id')->take(20);
+                    @endphp
+                @endforeach
+                @foreach($uniqueProducts as $product)
                     <div class="item">
-                        <img src="{{asset('imgs/govno.jpg')}}" alt="product" class="product_img">
+                        <img src="{{$product->img}}" alt="product" class="product_img">
                         <div class="head">
-                            <div class="price">11 ₴</div>
+                            @if($product->sale)
+                                <div class="old-price">{{ $product->price }} ₴</div>
+                                <div class="sale">{{ $product->sale }} ₴</div>
+                            @else
+                                <div class="price">{{ $product->price }} ₴</div>
+                            @endif
                             <div class="product_name">
-                                <a href="#">Product name</a>
+                                <a href="#">{{ $product->name }}</a>
                             </div>
                         </div>
                         <div class="buttons">
@@ -204,7 +213,7 @@
                             <img src="{{asset('imgs/likes.png')}}" alt="like" class="like">
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
         <button class="show-more container-item"><span>Показати ще</span></button>
