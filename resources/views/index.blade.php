@@ -29,18 +29,18 @@
         </form>
     </div>
     <div class="item buttons">
-        <a href="{{route('login')}}" class="btn-head login">
+        <div onclick="open_login_menu()" class="btn-head login">
             <img src="{{asset('imgs/login.png')}}" alt="login">
             <div>Увiйти</div>
-        </a>
-        <a href="{{route('likes')}}" class="btn-head likes">
+        </div>
+        <div href="{{route('likes')}}" class="btn-head likes">
             <img src="{{asset('imgs/likes.png')}}" alt="likes">
             <div>Бажане</div>
-        </a>
-        <a href="{{route('cart')}}" class="btn-head cart">
+        </div>
+        <div href="{{route('cart')}}" class="btn-head cart">
             <img src="{{asset('imgs/cart.png')}}" alt="cart">
             <div>Кошик</div>
-        </a>
+        </div>
     </div>
 </div>
 <div class="header block">
@@ -353,6 +353,13 @@
         </div>
     </div>
 </div>
+<div class="modals">
+    <div onclick="open_login_menu()" class="modal-bg"></div>
+    <div class="login-menu">
+        LOGIN MENU
+    </div>
+</div>
+<script src="{{asset('js/modals.js')}}"></script>
 {{--<script src="{{asset('js/carousel.js')}}"></script>--}}
 </body>
 </html>

@@ -16,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, "index"])->name("index");
 // change to working links
-Route::get('/login', [PageController::class, 'index'])->name('login');
 Route::get('/likes', [PageController::class, 'index'])->name('likes');
 Route::get('/cart', [PageController::class, 'index'])->name('cart');

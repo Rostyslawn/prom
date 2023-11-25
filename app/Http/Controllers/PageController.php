@@ -22,8 +22,6 @@ class PageController extends Controller
 
         $categories = $products->groupBy('category_id');
 
-//        dd($mostPopularProducts);
-
         return view('index')
             ->with('AllProducts', $categories);
     }

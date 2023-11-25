@@ -1,11 +1,13 @@
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
 }
 
-body {
-    overflow-x: hidden;
+body.no-scroll {
+    padding-right: 17px;
+    overflow: hidden;
 }
 
 a {
@@ -43,7 +45,7 @@ button {
     grid-template-columns: auto 1fr auto;
     align-items: center;
     background: white;
-    z-index: 99;
+    z-index: 88;
 }
 
 .nav .item {
@@ -618,4 +620,36 @@ button {
 .footer .footer-bottom .social-media img {
     width: 24px;
     height: 24px;
+}
+
+/* Modals */
+.modal-bg {
+    display: none;
+    position: fixed;
+    background-color: #00000080;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.modal-bg.active {
+    display: block;
+}
+
+.login-menu {
+    background: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translate(100%, 0);
+    transition: 0.3s;
+    width: 300px;
+    height: 100vh;
+    z-index: 100;
+}
+
+.login-menu.open {
+    transform: translate(0, 0);
 }
