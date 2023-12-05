@@ -501,7 +501,6 @@ button {
     justify-content: space-between;
     padding: 25px;
     background: white;
-    height: 100px;
 }
 
 .main .container-footer .img {
@@ -638,18 +637,92 @@ button {
     display: block;
 }
 
-.login-menu {
+.modals .menu {
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
     background: white;
     position: fixed;
     top: 0;
     right: 0;
     transform: translate(100%, 0);
     transition: 0.3s;
-    width: 300px;
+    width: 400px;
     height: 100vh;
     z-index: 100;
 }
 
 .login-menu.open {
     transform: translate(0, 0);
+}
+
+/* Registry or login */
+.login-menu h3 {
+    font-size: 14px;
+}
+
+.login-menu * {
+    width: 100%;
+}
+
+.login-menu button {
+    margin: 15px 0;
+}
+
+.login-menu .registry-or-login {
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    background: #7b04df;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.login-menu .item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.login-menu .item .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.login-menu .item span {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.login-menu .select-language {
+    border-top: solid 1px #7d7d91;
+    border-bottom: solid 1px #7d7d91;
+}
+
+.login-menu .settings {
+    border-top: solid 1px #7d7d91;
+    border-bottom: solid 1px #7d7d91;
+}
+
+.login-menu .start-selling {
+    border-bottom: solid 1px #7d7d91;
+}
+
+.login-menu .qr-code {
+    display: flex;
+    align-items: start;
+    background: #f1f1f9;
+    padding-left: 15px;
+}
+
+.login-menu .qr-code img {
+    width: 80px;
+    height: 80px;
+}
+
+.login-menu .qr-code div > :last-child {
+    font-size: 14px;
+    color: #7d7d91;
 }

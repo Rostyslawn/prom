@@ -16,9 +16,9 @@
         <img src="{{asset('imgs/logo.png')}}" alt="logo">
     </div>
     <div class="item search">
-        <form method="post" action="">
+        <form>
             <label>
-                <input placeholder="я шукаю...">
+                <input placeholder="Я шукаю...">
             </label>
             <div class="mic">
                 <img src="{{asset('imgs/mic.png')}}" alt="microphone">
@@ -355,8 +355,62 @@
 </div>
 <div class="modals">
     <div onclick="open_login_menu()" class="modal-bg"></div>
-    <div class="login-menu">
-        LOGIN MENU
+    <div class="login-menu menu">
+        <h3 class="status">Ви не авторизованi</h3>
+        <button class="registry-or-login">
+            Увійти або зареєструватись
+        </button>
+        <div class="item select-language">
+            <img src="{{asset('imgs/world.png')}}" class="icon" alt="Select language">
+            <span>Українська</span>
+        </div>
+        <div class="item order-history">
+            <img src="{{asset('imgs/history.png')}}" class="icon" alt="Order history">
+            <span>Історія замовлень</span>
+        </div>
+        <div class="item order-tracking">
+            <img src="{{asset('imgs/tracking.png')}}" class="icon" alt="Order tracking">
+            <span>Відстеження замовлення</span>
+        </div>
+        <div class="item favorite">
+            <img src="{{asset('imgs/heart.png')}}" class="icon" alt="Favorite">
+            <span>Бажане</span>
+        </div>
+        <div class="item reviews">
+            <img src="{{asset('imgs/star.png')}}" class="icon" alt="My reviews">
+            <span>Мої відгуки</span>
+        </div>
+        <div class="item wallet">
+            <img src="{{asset('imgs/wallet.png')}}" class="icon" alt="My wallet">
+            <span>Мій гаманець</span>
+        </div>
+        <div class="item discounts">
+            <img src="{{asset('imgs/discount.png')}}" class="icon" alt="Discounts and bonuses">
+            <span>Знижки та бонуси</span>
+        </div>
+        <div class="item settings">
+            <img src="{{asset('imgs/setting.png')}}" class="icon" alt="Settings">
+            <span>Налаштування</span>
+        </div>
+        <div class="item start-selling">
+            <img src="{{asset('imgs/trade.png')}}" class="icon" alt="Start selling on prom">
+            <span>Почати продавати на prom.ua</span>
+        </div>
+        <div class="item support">
+            <img src="{{asset('imgs/telegram.png')}}" class="icon" alt="Prom-support">
+            <span>Пром-підтримка</span>
+        </div>
+        <div class="item help">
+            <img src="{{asset('imgs/help.png')}}" class="icon" alt="Help">
+            <span>Довідка</span>
+        </div>
+        <div class="item qr-code">
+            <img src="{{asset('imgs/qr-code.png')}}" alt="QR-Code">
+            <div>
+                <span>Агов! А в додатку зручніше</span>
+                <span>Відскануй QR-код</span>
+            </div>
+        </div>
     </div>
 </div>
 <script src="{{asset('js/modals.js')}}"></script>

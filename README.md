@@ -4,6 +4,8 @@ This repository contains a project created using the Laravel framework, and to s
 
 ## Running the Project
 
+Please make sure you have Composer installed and have configured your Laravel environment before proceeding.
+
 To run the project, follow these steps:
 
 1. Update the project's dependencies using Composer:
@@ -36,12 +38,6 @@ To run the project, follow these steps:
     php artisan serve
     ```
 
-After completing these steps, your project will be up and running. You can access the project at the address provided by the `php artisan serve` command.
-
-Please make sure you have Composer installed and have configured your Laravel environment before proceeding.
-
 **Project Description:**
-
-This project is a clone of the promua website.
 
 Author: Rostyslawn02
