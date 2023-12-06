@@ -354,10 +354,10 @@
     </div>
 </div>
 <div class="modals">
-    <div onclick="open_login_menu()" class="modal-bg"></div>
+    <div onclick="close_modals()" class="modal-bg"></div>
     <div class="login-menu menu">
         <h3 class="status">Ви не авторизованi</h3>
-        <button class="registry-or-login">
+        <button onclick="open_auth_menu()" class="registry-or-login">
             Увійти або зареєструватись
         </button>
         <div class="item select-language">
@@ -411,6 +411,46 @@
                 <span>Відскануй QR-код</span>
             </div>
         </div>
+    </div>
+    <div class="authorization menu">
+        <form>
+            <div class="head">
+                <img onclick="open_auth_menu()" src="{{asset('imgs/leftarrow.png')}}" alt="Go back" class="go-back">
+                <h3>Вхiд</h3>
+            </div>
+            <div class="items">
+                <div class="hello">
+                    <img src="{{asset('imgs/hello.png')}}" alt="Hello">
+                </div>
+                <h3>Увійти в кабінет</h3>
+                <span>Увійдіть, щоб додавати товари до бажаного, <br> писати продавцям і бачити свої замовлення</span>
+                <div class="insert-number">Введіть телефон <span>*</span></div>
+                <label>
+                    <input placeholder="+380 (__) ___-__-__" class="telephone-number">
+                </label>
+                <button class="auth">Увiйти</button>
+                <span class="login-with-text">Або увійдіть за допомогою:</span>
+                <div class="login-with">
+                    <div class="elem">
+                        <img src="{{asset('imgs/mail.png')}}" alt="Mail">
+                    </div>
+                    <div class="elem">
+                        <img src="{{asset('imgs/google.png')}}" alt="Google">
+                    </div>
+                    <div class="elem">
+                        <img src="{{asset('imgs/facebook.png')}}" alt="Facebook">
+                    </div>
+                </div>
+                <div class="no-profile">
+                    <span>Немає профілю?</span>
+                    <div>Зареєструйтесь</div>
+                </div>
+                <h3 class="peoples">2 600 000</h3>
+                <span>відвідувачів кожен день на prom.ua.</span>
+                <span>Реєструйся, додавай товари, продавай по всій Україні</span>
+                <button class="become-seller">Стати продавцем</button>
+            </div>
+        </form>
     </div>
 </div>
 <script src="{{asset('js/modals.js')}}"></script>

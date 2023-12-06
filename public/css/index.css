@@ -16,7 +16,7 @@ a {
 }
 
 .block {
-    padding: 0 300px;
+    padding: 0 250px;
 }
 
 button {
@@ -539,11 +539,6 @@ button {
     height: 40px;
 }
 
-/* fix background:hover */
-/*.main .container-footer .left-side span button:hover {
-    background: ;
-}*/
-
 .main .container-footer .right-side {
     display: flex;
     flex-direction: column;
@@ -638,7 +633,7 @@ button {
 }
 
 .modals .menu {
-    padding: 20px;
+    /*padding: 20px;*/
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
     background: white;
@@ -652,11 +647,15 @@ button {
     z-index: 100;
 }
 
-.login-menu.open {
+.modals .menu.open {
     transform: translate(0, 0);
 }
 
 /* Registry or login */
+.login-menu {
+    padding: 20px;
+}
+
 .login-menu h3 {
     font-size: 14px;
 }
@@ -725,4 +724,132 @@ button {
 .login-menu .qr-code div > :last-child {
     font-size: 14px;
     color: #7d7d91;
+}
+
+/* Authorization */
+.authorization form {
+    width: 100%;
+    height: 100%;
+}
+
+.authorization .head {
+    border-top-left-radius: 20px;
+    padding: 15px;
+    color: white;
+    background: #7b04df;
+}
+
+.authorization .head .go-back {
+    position: absolute;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.authorization .head h3 {
+    text-align: center;
+}
+
+.authorization .items {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+    padding: 35px;
+}
+
+.authorization .hello {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+}
+
+.authorization .hello img {
+    width: 48px;
+    height: 100%;
+}
+
+.authorization span {
+    font-size: 14px;
+    color: #01011b;
+}
+
+.authorization .insert-number {
+    font-size: 14px;
+    color: #01011b;
+}
+
+.authorization .insert-number span {
+    color: red;
+}
+
+.authorization label input {
+    border: 1px solid #c1c1d4;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+}
+
+.authorization .auth {
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    background: #7b04df;
+    opacity: 0.5;
+    color: white;
+    height: 40px;
+}
+
+.authorization .login-with-text {
+    text-align: center;
+}
+
+.authorization .login-with {
+    display: flex;
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+.authorization .login-with .elem {
+    border: 1px solid #c1c1d4;
+    border-radius: 8px;
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+}
+
+.authorization .login-with .elem img {
+    width: 100%;
+    height: 100%;
+}
+
+.authorization .no-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 10px;
+    border-bottom: 1px solid #7d7d91;
+    padding-bottom: 20px;
+}
+
+.authorization .no-profile span {
+    color: #7d7d91;
+}
+
+.authorization .no-profile div {
+    cursor: pointer;
+    font-size: 14px;
+    color: #0670eb;
+}
+
+.authorization .no-profile div:hover {
+    text-decoration: underline;
+}
+
+.authorization .become-seller {
+    font-weight: 700;
+    border: 1px solid #7b04df;
+    border-radius: 8px;
+    color: #7b04df;
+    padding: 10px;
 }
