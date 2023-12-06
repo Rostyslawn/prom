@@ -102,7 +102,7 @@
             </div>
         </div>
         <div class="carousel">
-            <div class="btn btn-left">
+            <div onclick="ch_to_l()" class="btn btn-left">
                 <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
             </div>
             <div class="slider-wrapper">
@@ -111,7 +111,7 @@
                 <div class="img"><img src="{{asset('imgs/govno.jpg')}}"></div>
                 <div class="img"><img src="{{asset('imgs/govno.jpg')}}"></div>
             </div>
-            <div class="btn btn-right">
+            <div onclick="ch_to_r()" class="btn btn-right">
                 <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
             </div>
         </div>
@@ -454,6 +454,6 @@
     </div>
 </div>
 <script src="{{asset('js/modals.js')}}"></script>
-{{--<script src="{{asset('js/carousel.js')}}"></script>--}}
+<script src="{{asset('js/carousel.js')}}"></script>
 </body>
 </html>
