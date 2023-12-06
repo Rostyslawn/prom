@@ -1,20 +1,16 @@
-// make some fixes
 let carousel = document.querySelector(".slider-wrapper");
-let left = 0;
+let imgs = carousel.querySelectorAll('img');
+let left= 0;
 
-function ch_to_l() {
-    if(left >= 0) {
-        return
-    }
+const ch_to_l = () => {
+    if(left >= 0) return;
 
     left += 100;
     carousel.style.left = left + "%";
 }
 
-function ch_to_r() {
-    if(left <= -300) {
-        return
-    }
+const ch_to_r = () => {
+    if(left <= -(imgs.length - 1) * 100) return;
 
     left -= 100;
     carousel.style.left = left + "%";
