@@ -25,7 +25,7 @@ class AuthController extends Controller
 //            }
 //        }
 
-        // count() - кол-во $errors
+        // count() - how many $errors
         if(count($errors)) return back()->withErrors($errors);
 
         $login = $request->input("login");
