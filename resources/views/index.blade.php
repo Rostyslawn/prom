@@ -413,44 +413,46 @@
         </div>
     </div>
     <div class="authorization menu">
-        <form>
-            <div class="head">
-                <img onclick="open_auth_menu()" src="{{asset('imgs/leftarrow.png')}}" alt="Go back" class="go-back">
-                <h3>Вхiд</h3>
+        <div class="head">
+            <img onclick="open_auth_menu()" src="{{asset('imgs/leftarrow.png')}}" alt="Go back" class="go-back">
+            <h3>Вхiд</h3>
+        </div>
+        <div class="items">
+            <div class="hello">
+                <img src="{{asset('imgs/hello.png')}}" alt="Hello">
             </div>
-            <div class="items">
-                <div class="hello">
-                    <img src="{{asset('imgs/hello.png')}}" alt="Hello">
-                </div>
-                <h3>Увійти в кабінет</h3>
-                <span>Увійдіть, щоб додавати товари до бажаного, <br> писати продавцям і бачити свої замовлення</span>
-                <div class="insert-number">Введіть телефон <span>*</span></div>
+            <h3>Увійти в кабінет</h3>
+            <span>Увійдіть, щоб додавати товари до бажаного, <br> писати продавцям і бачити свої замовлення</span>
+            <div class="insert-number">Введіть телефон <span>*</span></div>
+            <form action="{{ route("auth") }}" method="POST">
+                @csrf
                 <label>
-                    <input placeholder="+380 (__) ___-__-__" class="telephone-number">
+                    <input name="login" placeholder="+380 (__) ___-__-__" class="telephone-number">
+                    <input name="password" placeholder="password">
                 </label>
-                <button class="auth">Увiйти</button>
-                <span class="login-with-text">Або увійдіть за допомогою:</span>
-                <div class="login-with">
-                    <div class="elem">
-                        <img src="{{asset('imgs/mail.png')}}" alt="Mail">
-                    </div>
-                    <div class="elem">
-                        <img src="{{asset('imgs/google.png')}}" alt="Google">
-                    </div>
-                    <div class="elem">
-                        <img src="{{asset('imgs/facebook.png')}}" alt="Facebook">
-                    </div>
+                <button type="submit" class="auth">Увiйти</button>
+            </form>
+            <span class="login-with-text">Або увійдіть за допомогою:</span>
+            <div class="login-with">
+                <div class="elem">
+                    <img src="{{asset('imgs/mail.png')}}" alt="Mail">
                 </div>
-                <div class="no-profile">
-                    <span>Немає профілю?</span>
-                    <div>Зареєструйтесь</div>
+                <div class="elem">
+                    <img src="{{asset('imgs/google.png')}}" alt="Google">
                 </div>
-                <h3 class="peoples">2 600 000</h3>
-                <span>відвідувачів кожен день на prom.ua.</span>
-                <span>Реєструйся, додавай товари, продавай по всій Україні</span>
-                <button class="become-seller">Стати продавцем</button>
+                <div class="elem">
+                    <img src="{{asset('imgs/facebook.png')}}" alt="Facebook">
+                </div>
             </div>
-        </form>
+            <div class="no-profile">
+                <span>Немає профілю?</span>
+                <div>Зареєструйтесь</div>
+            </div>
+            <h3 class="peoples">2 600 000</h3>
+            <span>відвідувачів кожен день на prom.ua.</span>
+            <span>Реєструйся, додавай товари, продавай по всій Україні</span>
+            <button class="become-seller">Стати продавцем</button>
+        </div>
     </div>
 </div>
 <script src="{{asset('js/modals.js')}}"></script>

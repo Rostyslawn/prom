@@ -4,8 +4,6 @@ This repository contains a project created using the Laravel framework, and to s
 
 ## Running the Project
 
-Please make sure you have Composer installed and have configured your Laravel environment before proceeding.
-
 To run the project, follow these steps:
 
 1. Update the project's dependencies using Composer:

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, "index"])->name("index");
+Route::post('/auth', [AuthController::class, 'auth'])->name("auth");
 // change to working links
 Route::get('/likes', [PageController::class, 'index'])->name('likes');
 Route::get('/cart', [PageController::class, 'index'])->name('cart');
