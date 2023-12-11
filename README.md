@@ -5,7 +5,7 @@ This repository contains a project created using the Laravel framework, and to s
 ## Running the Project
 
 To run the project, follow these steps:
-Rename file ".env.example" to ".env"
+- Rename file ".env.example" to ".env"
 
 1. Update the project's dependencies using Composer:
 
