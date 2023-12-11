@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\mostPopularProducts;
+use App\Models\MostPopularProducts;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +14,6 @@ class MostPopularProductsSeeder extends Seeder
      */
     public function run(): void
     {
-        mostPopularProducts::factory()->times(100)->create();
+        MostPopularProducts::factory()->times(100)->create();
     }
 }

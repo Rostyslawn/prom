@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\mostPopularProducts;
+use App\Models\MostPopularProducts;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
