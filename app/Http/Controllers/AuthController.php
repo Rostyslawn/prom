@@ -13,11 +13,11 @@ class AuthController extends Controller
     public function auth(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'login' => 'required | string | max: 16',
+            'login' => 'required | string | min: 4 | max: 16',
             'password' => 'required | string | min: 4 | max: 16',
         ]);
 
-        $errors = $validator->errors()->getMessages();
+//        $errors = $validator->errors()->getMessages();
 
 //        foreach ($errors as $field => $messages) {
 //            foreach ($messages as $message) {
@@ -25,8 +25,11 @@ class AuthController extends Controller
 //            }
 //        }
 
-        // count() - how many $errors
-        if(count($errors)) return back()->withErrors($errors);
+//        count() - how many $errors
+//        if(count($errors)) return back()->with($errors);
+
+        if($validator->fails())
+            return back()->withErrors($validator->errors());
 
         $login = $request->input("login");
         $password = $request->input("password");
@@ -34,16 +37,19 @@ class AuthController extends Controller
         $data = User::where("name", $login)
             ->first();
 
-        if(!$data) {
-            echo "Пользователь не найден";
-            return;
-        }
+        if(!$data)
+            return back()->with("authentication", "User not found");
 
-//        if(Hash::check($password, $data->password))
-//            echo "molodec";
-//        else
-//            echo "idi nafig";
+//        if(!$data) {
+//            echo "Пользователь не найден";
+//            return;
+//        }
+
+        if(!Hash::check($password, $data->password))
+            return back()->with("authentication", "Invalid password");
 
         return back();
+
+//        return back();
     }
 }

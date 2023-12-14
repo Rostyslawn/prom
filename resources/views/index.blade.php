@@ -8,6 +8,18 @@
     <link rel="icon" href="{{asset('imgs/icon.jpg')}}">
 </head>
 <body>
+@if($errors->any())
+    @foreach($errors->keys() as $field)
+        <div class="error">
+            Error: {{ $errors->first($field) }}<br>
+        </div>
+    @endforeach
+@endif
+<div>
+    @if(session("authentication"))
+        <div>{{ session("authentication") }}</div>
+    @endif
+</div>
 <div class="ad">
     <img alt="ad img" src="{{asset('imgs/adImg.png')}}">
 </div>

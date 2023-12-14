@@ -17,6 +17,6 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [PageController::class, "index"])->name("index");
 Route::post('/auth', [AuthController::class, 'auth'])->name("auth");
-// change to working links
+// Fix routes
 Route::get('/likes', [PageController::class, 'index'])->name('likes');
 Route::get('/cart', [PageController::class, 'index'])->name('cart');
