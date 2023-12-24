@@ -15,11 +15,11 @@
         </div>
     @endforeach
 @endif
-<div>
-    @if(session("user"))
-        <div>{{ session("user")->username }}</div>
-    @endif
-</div>
+{{--<div>--}}
+{{--    @if(session("user"))--}}
+{{--        <div>{{ session("user")->username }}</div>--}}
+{{--    @endif--}}
+{{--</div>--}}
 <div class="ad">
     <img alt="ad img" src="{{asset('imgs/adImg.png')}}">
 </div>
@@ -138,7 +138,7 @@
         <h2>Часто купують</h2>
         <div class="most-popular container-item">
             <div class="items">
-                <div onclick="ch_to_l()" class="btn btn-left">
+                <div onclick="" class="btn btn-left">
                     <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
                 </div>
                 <div class="slider-wrapper">
@@ -165,7 +165,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div onclick="ch_to_r()" class="btn btn-right">
+                <div onclick="" class="btn btn-right">
                     <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                 </div>
             </div>
@@ -439,10 +439,10 @@
                 @csrf
                 <div class="insert-number">Введіть телефон <span>*</span></div>
                 <label>
-                    <input name="login" placeholder="+380 (__) ___-__-__" class="telephone-number">
+                    <input name="login" placeholder="+380 (__) ___-__-__" class="telephone-number input-event">
                     {{--                    <input name="password" placeholder="password">--}}
                 </label>
-                <button type="submit" class="auth">Увiйти</button>
+                <button type="submit" class="auth submit">Увiйти</button>
             </form>
             <span class="login-with-text">Або увійдіть за допомогою:</span>
             <div class="login-with">
@@ -478,25 +478,25 @@
                 @csrf
                 <label>
                     <span>Ваше ім'я</span>
-                    <input name="name" type="text">
+                    <input class="input-event" name="name" type="text">
                 </label>
                 <label>
                     <span>Ваше прізвище</span>
-                    <input name="surname" type="text">
+                    <input class="input-event" name="surname" type="text">
                 </label>
                 <label class="phone-number">
                     <span>Номер телефону <span>*</span></span>
-                    <input name="number" placeholder="+380 (__) ___-__-__" type="text">
+                    <input class="input-event" name="number" placeholder="+380 (__) ___-__-__" type="text">
                 </label>
                 <label>
                     <span>Пароль</span>
-                    <input name="password" type="password">
+                    <input class="input-event" name="password" type="password">
                 </label>
                 <span class="receive-checkbox">
-                    <input name="receive_prom_offers" type="checkbox" id="custom-checkbox">
+                    <input name="receive_prom_offers" type="checkbox">
                     <label for="custom-checkbox">Я хочу отримувати цікаві пропозиції від prom.ua</label>
                 </span>
-                <button type="submit" class="auth">Зареєструватися</button>
+                <button type="submit" class="auth submit">Зареєструватися</button>
             </form>
             <div class="accepts">
                 Реєструючись, ви погоджуєтеся з
@@ -532,5 +532,6 @@
 </div>
 <script src="{{asset('js/modals.js')}}"></script>
 <script src="{{asset('js/carousel.js')}}"></script>
+<script src="{{asset('js/inputs.js')}}"></script>
 </body>
 </html>
