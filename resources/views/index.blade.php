@@ -16,8 +16,8 @@
     @endforeach
 @endif
 <div>
-    @if(session("authentication"))
-        <div>{{ session("authentication") }}</div>
+    @if(session("user"))
+        <div>{{ session("user")->username }}</div>
     @endif
 </div>
 <div class="ad">
@@ -138,10 +138,10 @@
         <h2>Часто купують</h2>
         <div class="most-popular container-item">
             <div class="items">
+                <div onclick="ch_to_l()" class="btn btn-left">
+                    <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
+                </div>
                 <div class="slider-wrapper">
-                    <div class="btn btn-left">
-                        <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
-                    </div>
                     @foreach($AllProducts->take(20) as $categoryId => $products)
                         <div class="item">
                             <div class="head">
@@ -164,9 +164,9 @@
                             </div>
                         </div>
                     @endforeach
-                    <div class="btn btn-right">
-                        <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
-                    </div>
+                </div>
+                <div onclick="ch_to_r()" class="btn btn-right">
+                    <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                 </div>
             </div>
         </div>
@@ -435,12 +435,12 @@
             </div>
             <h3>Увійти в кабінет</h3>
             <span>Увійдіть, щоб додавати товари до бажаного, <br> писати продавцям і бачити свої замовлення</span>
-            <div class="insert-number">Введіть телефон <span>*</span></div>
             <form action="{{ route("auth") }}" method="POST">
                 @csrf
+                <div class="insert-number">Введіть телефон <span>*</span></div>
                 <label>
                     <input name="login" placeholder="+380 (__) ___-__-__" class="telephone-number">
-                    <input name="password" placeholder="password">
+                    {{--                    <input name="password" placeholder="password">--}}
                 </label>
                 <button type="submit" class="auth">Увiйти</button>
             </form>
@@ -458,12 +458,75 @@
             </div>
             <div class="no-profile">
                 <span>Немає профілю?</span>
-                <div>Зареєструйтесь</div>
+                <div onclick="open_reg_menu()">Зареєструйтесь</div>
             </div>
             <h3 class="peoples">2 600 000</h3>
             <span>відвідувачів кожен день на prom.ua.</span>
             <span>Реєструйся, додавай товари, продавай по всій Україні</span>
             <button class="become-seller">Стати продавцем</button>
+        </div>
+    </div>
+    <div class="registration menu">
+        <div class="head">
+            <img onclick="open_reg_menu()" src="{{asset('imgs/leftarrow.png')}}" alt="Go back" class="go-back">
+            <h3>Реєстрація</h3>
+        </div>
+        <div class="items">
+            <h3>Створити профіль</h3>
+            <span>Заповніть всі поля нижче, щоб створити свій профіль</span>
+            <form action="{{ route("reg") }}" method="POST">
+                @csrf
+                <label>
+                    <span>Ваше ім'я</span>
+                    <input name="name" type="text">
+                </label>
+                <label>
+                    <span>Ваше прізвище</span>
+                    <input name="surname" type="text">
+                </label>
+                <label class="phone-number">
+                    <span>Номер телефону <span>*</span></span>
+                    <input name="number" placeholder="+380 (__) ___-__-__" type="text">
+                </label>
+                <label>
+                    <span>Пароль</span>
+                    <input name="password" type="password">
+                </label>
+                <span class="receive-checkbox">
+                    <input name="receive_prom_offers" type="checkbox" id="custom-checkbox">
+                    <label for="custom-checkbox">Я хочу отримувати цікаві пропозиції від prom.ua</label>
+                </span>
+                <button type="submit" class="auth">Зареєструватися</button>
+            </form>
+            <div class="accepts">
+                Реєструючись, ви погоджуєтеся з
+                <a href="#">угодою користувача</a>
+                i
+                <a href="#">політикою конфіденційності</a>
+                маркетплейсу prom.ua
+            </div>
+            <span class="login-with-text">Або увійдіть за допомогою:</span>
+            <div class="login-with">
+                <div class="elem">
+                    <img src="{{asset('imgs/mail.png')}}" alt="Mail">
+                </div>
+                <div class="elem">
+                    <img src="{{asset('imgs/google.png')}}" alt="Google">
+                </div>
+                <div class="elem">
+                    <img src="{{asset('imgs/facebook.png')}}" alt="Facebook">
+                </div>
+            </div>
+            <div class="have-profile">
+                Вже є профіль?
+                <span onclick="open_reg_menu()">Увiйдiть</span>
+            </div>
+        </div>
+        <hr>
+        <div class="users">
+            <h3>2 600 000</h3>
+            <span>відвідувачів кожен день на prom.ua.</span> <br>
+            <span>Реєструйся, додавай товари, продавай по всій Україні</span>
         </div>
     </div>
 </div>

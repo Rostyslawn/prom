@@ -22,6 +22,8 @@ class PageController extends Controller
 
         $categories = $products->groupBy('category_id');
 
+//        dd(session()->get("user"));
+
         return view('index')
             ->with('AllProducts', $categories);
     }

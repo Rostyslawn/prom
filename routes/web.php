@@ -3,7 +3,7 @@
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use \App\Http\Controllers\RegController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,7 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [PageController::class, "index"])->name("index");
 Route::post('/auth', [AuthController::class, 'auth'])->name("auth");
+Route::post('/registration', [RegController::class, 'reg'])->name("reg");
 // Fix routes
 Route::get('/likes', [PageController::class, 'index'])->name('likes');
 Route::get('/cart', [PageController::class, 'index'])->name('cart');

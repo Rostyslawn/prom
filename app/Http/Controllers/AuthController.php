@@ -14,7 +14,7 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'login' => 'required | string | min: 4 | max: 16',
-            'password' => 'required | string | min: 4 | max: 16',
+//            'password' => 'required | string | min: 4 | max: 16',
         ]);
 
 //        $errors = $validator->errors()->getMessages();
@@ -31,23 +31,26 @@ class AuthController extends Controller
         if($validator->fails())
             return back()->withErrors($validator->errors());
 
-        $login = $request->input("login");
-        $password = $request->input("password");
+        $phone = $request->input("login");
+//        $password = $request->input("password");
 
-        $data = User::where("name", $login)
+        $data = User::where("phone_number", $phone)
             ->first();
 
         if(!$data)
-            return back()->with("authentication", "User not found");
+            return back()->withErrors("User not found");
 
 //        if(!$data) {
 //            echo "Пользователь не найден";
 //            return;
 //        }
 
-        if(!Hash::check($password, $data->password))
-            return back()->with("authentication", "Invalid password");
+//        if(!Hash::check($password, $data->password))
+//            return back()->withErrors("Wrong password");
+//        else
+//            return back()->with("user", $data);
 
+        session()->put("user", $data);
         return back();
 
 //        return back();
