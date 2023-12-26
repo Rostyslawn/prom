@@ -383,6 +383,33 @@ button {
     max-height: 40px;
 }
 
+/* styles for hope-you & most-popular */
+.main .most-popular .items .btn-left {
+    transform: translate(-200%, 0);
+}
+
+.main .most-popular .items .btn-right {
+    transform: translate(200%, 0);
+}
+
+.main .most-popular .items:hover .btn {
+    transform: translate(0, 0);
+    transition: 0.3s;
+}
+
+.main .hope-you .items .btn-left {
+    transform: translate(-200%, 0);
+}
+
+.main .hope-you .items .btn-right {
+    transform: translate(200%, 0);
+}
+
+.main .hope-you .items:hover .btn {
+    transform: translate(0, 0);
+    transition: 0.3s;
+}
+
 /* hope-you */
 .main .hope-you .items {
     position: relative;
