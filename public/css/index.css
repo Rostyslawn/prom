@@ -384,6 +384,14 @@ button {
 }
 
 /* hope-you */
+.main .hope-you .items {
+    position: relative;
+}
+
+.main .hope-you .items .btn {
+    padding: 20px;
+}
+
 .main .hope-you .items .slider-wrapper {
     grid-gap: 20px;
 }
@@ -652,6 +660,17 @@ button {
     transform: translate(0, 0);
 }
 
+.auth {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    background: #7b04df;
+    opacity: 0.5;
+    color: white;
+    height: 40px;
+}
+
 /* Registry or login */
 .login-menu {
     padding: 20px;
@@ -750,18 +769,6 @@ button {
     width: 100%;
     height: 100%;
 }
-
-.auth {
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    background: #7b04df;
-    opacity: 0.5;
-    color: white;
-    height: 40px;
-}
-
 
 .authorization .head {
     border-top-left-radius: 20px;
@@ -943,42 +950,3 @@ button {
 .registration .users h3 {
     font-size: 20px;
 }
-
-/*.receive-checkbox {*/
-/*    display: inline-block;*/
-/*    position: relative;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.receive-checkbox input {*/
-/*    position: absolute;*/
-/*    opacity: 0;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.receive-checkbox label {*/
-/*    position: relative;*/
-/*    display: inline-block;*/
-/*}*/
-
-/*!* Создание стилизованного чекбокса *!*/
-/*.receive-checkbox label:before {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    left: 0;*/
-/*    top: 0;*/
-/*    width: 15px; !* Ширина чекбокса *!*/
-/*    height: 15px; !* Высота чекбокса *!*/
-/*    background-color: yellow; !* Цвет фона чекбокса (желтый) *!*/
-/*}*/
-
-/*!* Стилизация галочки внутри чекбокса *!*/
-/*.receive-checkbox input:checked + label:before {*/
-/*    content: '\2713'; !* Код символа галочки *!*/
-/*    color: #000; !* Цвет галочки (черный) *!*/
-/*}*/
-
-/*.registration div span {*/
-/*    width: auto;*/
-/*    text-decoration: underline;*/
-/*}*/

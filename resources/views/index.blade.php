@@ -114,7 +114,7 @@
             </div>
         </div>
         <div class="carousel">
-            <div onclick="ch_to_l()" class="btn btn-left">
+            <div onclick="main_ch_to_l()" class="btn btn-left">
                 <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
             </div>
             <div class="slider-wrapper">
@@ -123,7 +123,7 @@
                 <div class="img"><img src="{{asset('imgs/govno.jpg')}}"></div>
                 <div class="img"><img src="{{asset('imgs/govno.jpg')}}"></div>
             </div>
-            <div onclick="ch_to_r()" class="btn btn-right">
+            <div onclick="main_ch_to_r()" class="btn btn-right">
                 <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
             </div>
         </div>
@@ -138,10 +138,10 @@
         <h2>Часто купують</h2>
         <div class="most-popular container-item">
             <div class="items">
-                <div onclick="" class="btn btn-left">
+                <div class="btn btn-left">
                     <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
                 </div>
-                <div class="slider-wrapper">
+                <div class="slider-wrapper carousels">
                     @foreach($AllProducts->take(20) as $categoryId => $products)
                         <div class="item">
                             <div class="head">
@@ -165,7 +165,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div onclick="" class="btn btn-right">
+                <div class="btn btn-right">
                     <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                 </div>
             </div>
@@ -173,10 +173,10 @@
         <h2>Тебе зацiкавить</h2>
         <div class="hope-you container-item">
             <div class="items">
-                <div class="slider-wrapper">
-                    <div class="btn btn-left">
-                        <img src="{{asset('imgs/arrow.png')}}" alt="swap to left">
-                    </div>
+                <div class="btn btn-left">
+                    <img src="{{asset('imgs/arrow.png')}}" alt="swap to left">
+                </div>
+                <div class="slider-wrapper carousels">
                     @foreach($AllProducts as $categoryId => $products)
                         @php
                             $uniqueProducts = $products->unique('id')->take(20);
@@ -192,9 +192,9 @@
                             </div>
                         </div>
                     @endforeach
-                    <div class="btn btn-right">
-                        <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
-                    </div>
+                </div>
+                <div class="btn btn-right">
+                    <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                 </div>
             </div>
         </div>
