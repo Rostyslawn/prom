@@ -6,5 +6,10 @@ inputs.forEach(input => {
 
     if(!button) return;
 
-    input.addEventListener('input', (e) => button.style.opacity = 1);
+    input.addEventListener('input', (e) => {
+        if(input.value.trim() == "")
+            return button.style.opacity = 0.5;
+
+        button.style.opacity = 1
+    });
 });
