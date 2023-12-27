@@ -8,13 +8,13 @@
     <link rel="icon" href="{{asset('imgs/icon.jpg')}}">
 </head>
 <body>
-@if($errors->any())
-    @foreach($errors->keys() as $field)
-        <div class="error">
-            Error: {{ $errors->first($field) }}<br>
-        </div>
-    @endforeach
-@endif
+{{--@if($errors->any())--}}
+{{--    @foreach($errors->keys() as $field)--}}
+{{--        <div class="error">--}}
+{{--            Error: {{ $errors->first($field) }}<br>--}}
+{{--        </div>--}}
+{{--    @endforeach--}}
+{{--@endif--}}
 {{--<div>--}}
 {{--    @if(session("user"))--}}
 {{--        <div>{{ session("user")->username }}</div>--}}

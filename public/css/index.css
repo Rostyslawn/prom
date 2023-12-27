@@ -713,6 +713,7 @@ button {
     opacity: 0.5;
     color: white;
     height: 40px;
+    cursor: not-allowed;
 }
 
 /* Registry or login */
@@ -960,6 +961,15 @@ button {
 
 .registration .phone-number span span {
     color: red;
+}
+
+.registration .receive-checkbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.registration .receive-checkbox label {
+    padding-left: 5px;
 }
 
 .registration .accepts {

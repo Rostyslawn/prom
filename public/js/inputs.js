@@ -7,9 +7,13 @@ inputs.forEach(input => {
     if(!button) return;
 
     input.addEventListener('input', (e) => {
-        if(input.value.trim() == "")
-            return button.style.opacity = 0.5;
+        if(input.value.trim() == "") {
+            button.style.opacity = 0.5;
+            button.style.cursor = "not-allowed";
+            return;
+        }
 
+        button.style.cursor = "pointer";
         button.style.opacity = 1
     });
 });
