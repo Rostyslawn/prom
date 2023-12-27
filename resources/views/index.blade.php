@@ -145,7 +145,7 @@
                     @foreach($AllProducts->take(20) as $categoryId => $products)
                         <div class="item">
                             <div class="head">
-                                <img class="head_img" src="{{ $products->first()->img }}">
+                                <div class="head_img"><img src="{{ $products->first()->img }}"></div>
                                 <h3><a href="#">{{ $products->first()->category_name }}</a></h3>
                             </div>
                             <div class="content">
@@ -153,12 +153,14 @@
                                     <div class="product">
                                         <img class="product_img" alt="product" src="{{ $product->img }}">
                                         <div class="product_name"><a href="#">{{ $product->name }}</a></div>
-                                        @if($product->sale)
-                                            <div class="old-price">{{ $product->price }} ₴</div>
-                                            <div class="sale">{{ $product->sale }} ₴</div>
-                                        @else
-                                            <div class="price">{{ $product->price }} ₴</div>
-                                        @endif
+                                        <div class="prices">
+                                            @if($product->sale)
+                                                <div class="old-price">{{ $product->price }} ₴</div>
+                                                <div class="sale">{{ $product->sale }} ₴</div>
+                                            @else
+                                                <div class="price">{{ $product->price }} ₴</div>
+                                            @endif
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>

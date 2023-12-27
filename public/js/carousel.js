@@ -13,6 +13,7 @@ carousels.forEach(slider => {
 
     if(!btnRight || !btnLeft) return;
 
+    // FIX
     btnLeft.addEventListener("click", () => {
         if(_left >= 0)
             return;

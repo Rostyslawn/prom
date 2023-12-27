@@ -338,6 +338,8 @@ button {
 }
 
 .main .most-popular .items .item {
+    display: flex;
+    flex-direction: column;
     width: 330px;
     padding: 15px;
     background: white;
@@ -353,9 +355,15 @@ button {
 .main .most-popular .items .item .head_img {
     border: 1px solid #c1c1d4;
     border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    padding: 10px;
+    width: 44px;
+    height: 44px;
+    overflow: hidden;
+}
+
+.main .most-popular .items .item .head_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .main .most-popular .items .item h3 {
@@ -381,6 +389,15 @@ button {
 .main .most-popular .items .item .product_name {
     overflow: hidden;
     max-height: 40px;
+}
+
+.main .most-popular .items .item .product {
+    display: flex;
+    flex-direction: column;
+}
+
+.main .most-popular .items .item .product .prices {
+    margin-top: auto;
 }
 
 /* styles for hope-you & most-popular */
