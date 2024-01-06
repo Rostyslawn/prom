@@ -25,7 +25,6 @@ class AuthController extends Controller
 //            }
 //        }
 
-//        count() - how many $errors
 //        if(count($errors)) return back()->with($errors);
 
         if($validator->fails())
