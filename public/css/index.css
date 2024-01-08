@@ -255,6 +255,10 @@
 }
 
 /* Styles for hope-you & most-popular */
+.main .most-popular .items .btn-left {
+    transform: translate(-200%, 0);
+}
+
 .main .most-popular .items .btn-right {
     transform: translate(200%, 0);
 }
