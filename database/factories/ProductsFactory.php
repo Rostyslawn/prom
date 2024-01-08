@@ -27,6 +27,7 @@ class ProductsFactory extends Factory
             'name' => $randomText,
             'slug' => $faker->slug,
             'description' => $faker->paragraph,
+            'seller' => $faker->sentence($nbWords = 3, $variableNbWords = true),
             'img' => $faker->imageUrl,
             "price" => $randomPrice,
             "sale" => $randomSale,

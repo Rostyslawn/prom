@@ -178,7 +178,7 @@
                             </div>
                             <div class="buttons">
                                 <button>Купити</button>
-                                <img src="{{asset('imgs/likes.png')}}" alt="like" class="like">
+                                <img src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like">
                             </div>
                         </div>
                     @endforeach
@@ -341,7 +341,7 @@
                 <span>Відстеження замовлення</span>
             </div>
             <div class="item favorite">
-                <img src="{{asset('imgs/heart.png')}}" class="icon" alt="Favorite">
+                <img src="{{asset('imgs/heartWithOutBG.png')}}" class="icon" alt="Favorite">
                 <span>Бажане</span>
             </div>
             <div class="item reviews">

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug', 255)->unique();
             $table->text('description');
             $table->string('img');
+            $table->string('seller');
             $table->integer("price");
             $table->integer("sale")->nullable();
             $table->integer('amount');

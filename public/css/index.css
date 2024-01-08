@@ -185,7 +185,7 @@
 
 .main .sale {
     font-weight: 600;
-    color: red;
+    color: #de0404;
 }
 
 /* most-popular */
@@ -366,8 +366,8 @@
 
 .main .for-you .buttons .like {
     cursor: pointer;
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
 }
 
 /* show-more button */
