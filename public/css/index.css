@@ -1,4 +1,4 @@
-/* header block */
+/* Header block */
 .header {
     margin-top: 25px;
 }
@@ -6,16 +6,12 @@
 .header .container {
     font-size: 14px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     overflow: hidden;
     height: 400px;
 }
 
-.header .container .left-side div:first-child a {
-    color: #0670eb;
-}
-
+.header .container .left-side div:first-child a,
 .header .container .left-side div:nth-child(2) a {
     color: #0670eb;
 }
@@ -23,7 +19,6 @@
 .header .container .left-side .item {
     cursor: pointer;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     padding: 10px 0;
     max-width: 250px;
@@ -57,7 +52,6 @@
     transition-duration: 0.5s;
     position: relative;
     display: flex;
-    flex-direction: row;
     left: 0;
     width: 100%;
     height: 100%;
@@ -140,7 +134,7 @@
     color: #7b04df;
 }
 
-/* main block */
+/* Main block */
 .main {
     background: #f1f1f9;
     margin-top: 25px;
@@ -188,7 +182,7 @@
     color: #de0404;
 }
 
-/* most-popular */
+/* Most-popular */
 .main .most-popular .items {
     position: relative;
 }
@@ -260,11 +254,7 @@
     margin-top: auto;
 }
 
-/* styles for hope-you & most-popular */
-.main .most-popular .items .btn-left {
-    transform: translate(-200%, 0);
-}
-
+/* Styles for hope-you & most-popular */
 .main .most-popular .items .btn-right {
     transform: translate(200%, 0);
 }
@@ -287,7 +277,7 @@
     transition: 0.3s;
 }
 
-/* hope-you */
+/* Hope-you */
 .main .hope-you .items {
     position: relative;
 }
@@ -321,7 +311,7 @@
     text-align: center;
 }
 
-/* for-you */
+/* For-you */
 .main .for-you .items {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -370,7 +360,7 @@
     height: 22px;
 }
 
-/* show-more button */
+/* Show-more button */
 .main .show-more {
     font-weight: 700;
     color: #7b04df;
@@ -380,12 +370,12 @@
     border-radius: 8px;
 }
 
-/* fix background */
+/* Fix background */
 .main .show-more:hover {
     transition: 0.3s;
 }
 
-/* what-find block */
+/* What-find block */
 .main .what-find .items {
     display: flex;
     flex-wrap: wrap;
@@ -407,10 +397,9 @@
     color: #0670eb;
 }
 
-/* main footer block */
+/* Main footer block */
 .main .container-footer {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     padding: 25px;
     background: white;
@@ -463,7 +452,7 @@
     color: #0670eb;
 }
 
-/* footer block */
+/* Footer block */
 .footer {
     padding-top: 25px;
     background: #f1f1f9;
@@ -546,7 +535,6 @@
 }
 
 .modals .menu {
-    /*padding: 20px;*/
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
     background: white;
@@ -846,7 +834,12 @@
 }
 
 .registration .have-profile span {
+    cursor: pointer;
     color: blue;
+}
+
+.registration .have-profile span:hover {
+    text-decoration: underline;
 }
 
 .registration hr {
