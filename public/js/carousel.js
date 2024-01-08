@@ -13,20 +13,20 @@ carousels.forEach(slider => {
 
     if(!btnRight || !btnLeft) return;
 
+    // console.log(slider.offsetWidth); // 1403
+
     // FIX
     btnLeft.addEventListener("click", () => {
         if(_left >= 0)
             return;
 
         _left += 100;
-        slider.style.left = left + "%";
+        slider.style.left = _left + "%";
     });
 
     btnRight.addEventListener("click", () => {
         if(_left <= -(_el.length - 1) * 100)
             return;
-
-        console.log((_el.length - 1) * 100);
 
         _left -= 100;
         slider.style.left = _left + "%";

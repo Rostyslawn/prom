@@ -4,6 +4,7 @@ use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use \App\Http\Controllers\RegController;
+use \App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,7 @@ use \App\Http\Controllers\RegController;
 Route::get('/', [PageController::class, "index"])->name("index");
 Route::post('/auth', [AuthController::class, 'auth'])->name("auth");
 Route::post('/registration', [RegController::class, 'reg'])->name("reg");
+Route::get('/product', [ProductController::class, "index"])->name("product");
 // Fix routes
 Route::get('/likes', [PageController::class, 'index'])->name('likes');
 Route::get('/cart', [PageController::class, 'index'])->name('cart');

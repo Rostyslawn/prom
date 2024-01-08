@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+}
+
+body.no-scroll {
+    padding-right: 17px;
+    overflow: hidden;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.block {
+    padding: 0 250px;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ad */
+.ad {
+    width: 100%;
+    height: 40px;
+}
+
+.ad img {
+    width: 100%;
+    height: 100%;
+}
+
+/* nav block */
+.nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    background: white;
+    z-index: 88;
+}
+
+.nav .item {
+    height: 40px;
+}
+
+.nav .logo {
+    cursor: pointer;
+    width: 100px;
+    margin-right: 25px;
+}
+
+.nav .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav .search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav .search form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #c1c1d4;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.nav .search form * {
+    border: none;
+}
+
+.nav .search form label {
+    width: 100%;
+}
+
+.nav .search form label input {
+    padding-left: 10px;
+    width: 100%;
+}
+
+.nav .search form label input:focus {
+    outline: none;
+}
+
+.nav .mic {
+    object-fit: cover;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.nav .mic img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav .findBtn {
+    width: 82px;
+    height: 40px;
+    font-weight: 600;
+    color: #7d7d91;
+    border-right: 1px solid #f1f1f9;
+}
+
+.nav .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav .btn-head {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 92px;
+    height: 40px;
+}
+
+.nav .btn-head img {
+    width: 24px;
+    height: 24px;
+}
