@@ -144,7 +144,7 @@
                                     <img src="{{$product->img}}" alt="product">
                                 </div>
                                 <div class="product_name">
-                                    <a href="#">{{$product->name}}</a>
+                                    <a href="{{route('product', ["product_name" => $product->name])}}">{{$product->name}}</a>
                                 </div>
                             </div>
                         @endforeach
@@ -173,7 +173,7 @@
                                     <div class="price">{{ $product->price }} ₴</div>
                                 @endif
                                 <div class="product_name">
-                                    <a href="#">{{ $product->name }}</a>
+                                    <a href="{{route('product', ["product_name" => $product->name])}}">{{ $product->name }}</a>
                                 </div>
                             </div>
                             <div class="buttons">
