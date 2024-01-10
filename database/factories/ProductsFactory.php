@@ -19,20 +19,21 @@ class ProductsFactory extends Factory
     {
         $faker = \Faker\Factory::create();
         $randomText = $faker->sentence($nbWords = 3, $variableNbWords = true);
-        $randomNums = $faker->numberBetween(1, 100);
+//        $randomNums = $faker->numberBetween(1, 100);
         $randomPrice = $faker->numberBetween(1, 1000);
         $randomSale = rand(0, 1) ? null : $faker->numberBetween(1, 1000);
 
         return [
             'name' => $randomText,
             'slug' => $faker->slug,
-            'description' => $faker->paragraph,
+            'description' => $faker->realTextBetween(300, 600),
             'seller' => $faker->sentence($nbWords = 3, $variableNbWords = true),
+            'country_of_origin' => $faker->country,
             'img' => $faker->imageUrl,
             "price" => $randomPrice,
             "sale" => $randomSale,
-            'amount' => $randomNums,
-            'likes' => $randomNums,
+            'amount' => $faker->numberBetween(1, 100),
+            'likes' => $faker->numberBetween(1, 100),
             "category_id" => Category::inRandomOrder()->first()->id,
         ];
     }

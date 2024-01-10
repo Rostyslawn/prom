@@ -19,6 +19,21 @@
             </div>
             <div class="item-margin item about-product">
                 <h2>Характеристики та опис</h2>
+                <div class="main-characteristics">
+                    <span class="title">Основнi</span>
+                    <div>Країна виробник: <span>{{$product_data->country_of_origin}}</span></div>
+                    <div>Кiлькiсть: <span>{{$product_data->amount}}</span></div>
+                    <div>Лайки: <span>{{$product_data->likes}}</span></div>
+                    <button class="showAllCharacteristics" onclick="showAllCharacteristics()">Всi характеристики</button>
+                    <div>Характеристика</div>
+                    <div>Характеристика</div>
+                    <div>Характеристика</div>
+                    <div>Характеристика</div>
+                </div>
+                <div class="description">
+                    <span>{{$product_data->description}}</span>
+                    <button onclick="showAllDescription()" class="showAllDescription">Показати весь опис</button>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -74,4 +89,5 @@
 @endsection
 @section('scripts')
     <script src="{{asset('js/modalsProduct.js')}}"></script>
+    <script src="{{asset('js/product_infoController.js')}}"></script>
 @endsection
