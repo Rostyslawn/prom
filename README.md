@@ -22,7 +22,7 @@ To run the project, follow these steps:
 3. Run the database migrations:
 
     ```bash
-    php artisan migrate
+    php artisan migrate:f
     ```
 
 4. Optionally, seed the database with initial data:
