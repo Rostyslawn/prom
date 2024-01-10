@@ -13,8 +13,6 @@ carousels.forEach(slider => {
 
     if(!btnRight || !btnLeft) return;
 
-    // console.log(slider.offsetWidth); // 1403
-
     // FIX
     btnLeft.addEventListener("click", () => {
         if(_left >= 0)
