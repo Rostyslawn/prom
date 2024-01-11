@@ -760,6 +760,11 @@
     border-radius: 8px;
     color: #7b04df;
     padding: 10px;
+    background: white;
+}
+
+.authorization .become-seller:hover {
+    background: #f1f1f9;
 }
 
 /* Registration */
@@ -830,7 +835,7 @@
 }
 
 .registration .accepts a {
-    color: blue;
+    color: #0670eb;
 }
 
 .registration .have-profile {
@@ -839,7 +844,7 @@
 
 .registration .have-profile span {
     cursor: pointer;
-    color: blue;
+    color: #0670eb;
 }
 
 .registration .have-profile span:hover {

@@ -11,7 +11,7 @@ const showAllCharacteristics = () => {
 
     showAllCharacteristicsBtn.style.display = "none";
 
-    main_characteristics.style.height = 290 + "px";
+    main_characteristics.style.height = "auto";
     const button = document.createElement("button");
     button.classList.add('closeAllCharacteristics');
     button.textContent = 'Приховати всi характеристики';
@@ -37,12 +37,12 @@ const showAllDescription = () => {
 
     showAllDescriptionBtn.style.display = "none";
 
-    description.style.height = 155 + "px";
+    description.style.height = "auto";
     const button = document.createElement("button");
     button.classList.add("closeAllDescription");
     button.textContent = 'Приховати весь опис';
     button.onclick = closeAllDescription;
-    button.style.marginTop = 15 + "px";
+    button.style.marginTop = 10 + "px";
 
     description.appendChild(button);
     descriptionStatus = true;
@@ -58,3 +58,6 @@ const closeAllDescription = () => {
 
     descriptionStatus = false;
 }
+
+showAllDescriptionBtn.addEventListener("click", showAllDescription);
+showAllCharacteristicsBtn.addEventListener("click", showAllCharacteristics);

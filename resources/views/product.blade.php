@@ -24,7 +24,7 @@
                     <div>Країна виробник: <span>{{$product_data->country_of_origin}}</span></div>
                     <div>Кiлькiсть: <span>{{$product_data->amount}}</span></div>
                     <div>Лайки: <span>{{$product_data->likes}}</span></div>
-                    <button class="showAllCharacteristics" onclick="showAllCharacteristics()">Всi характеристики</button>
+                    <button class="showAllCharacteristics">Всi характеристики</button>
                     <div>Характеристика</div>
                     <div>Характеристика</div>
                     <div>Характеристика</div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="description">
                     <span>{{$product_data->description}}</span>
-                    <button onclick="showAllDescription()" class="showAllDescription">Показати весь опис</button>
+                    <button class="showAllDescription">Показати весь опис</button>
                 </div>
             </div>
         </div>
