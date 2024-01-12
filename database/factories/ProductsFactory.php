@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Category;
+use App\Models\Sellers;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,15 +20,14 @@ class ProductsFactory extends Factory
     {
         $faker = \Faker\Factory::create();
         $randomText = $faker->sentence($nbWords = 3, $variableNbWords = true);
-//        $randomNums = $faker->numberBetween(1, 100);
         $randomPrice = $faker->numberBetween(1, 1000);
         $randomSale = rand(0, 1) ? null : $faker->numberBetween(1, 1000);
 
         return [
-            'name' => $randomText,
+            'name' => $faker->name,
             'slug' => $faker->slug,
             'description' => $faker->realTextBetween(300, 600),
-            'seller' => $faker->sentence($nbWords = 3, $variableNbWords = true),
+            'seller' => Sellers::inRandomOrder()->first()->name,
             'country_of_origin' => $faker->country,
             'img' => $faker->imageUrl,
             "price" => $randomPrice,

@@ -4,7 +4,6 @@
 @endsection
 @section("title", $product_data->name)
 @section("content")
-    {{--    {{$product_data}}--}}
     <div class="category-nav block">
         <div class="item catalog"><a href="#">Каталог товарiв</a></div>
         <div class="item arrow"><img alt=">" src="{{asset("imgs/arrow.png")}}"></div>
@@ -33,6 +32,18 @@
                 <div class="description">
                     <span>{{$product_data->description}}</span>
                     <button class="showAllDescription">Показати весь опис</button>
+                </div>
+            </div>
+            <div class="item-margin item about-seller">
+                <div class="head">
+                    <div class="seller-img">
+                        <img src="{{$sellers_data->img}}">
+                    </div>
+                    <div>
+{{--                    fix paddings    --}}
+                        <h2>Продавець {{$sellers_data->name}}</h2>
+                        <div>{{$sellers_data->rating}} Вiдгукiв</div>
+                    </div>
                 </div>
             </div>
         </div>

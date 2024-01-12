@@ -81,7 +81,7 @@ body, .nav, .nav form input {
     flex-direction: column;
     grid-gap: 10px;
     width: 100%;
-    height: 171px;
+    height: 191px;
 }
 
 .characteristics .main-characteristics .title {
@@ -284,4 +284,29 @@ body, .nav, .nav form input {
 .main .delivery .see-all:hover {
     transition: 0.3s;
     background: #f1f1f9;
+}
+
+.main .about-seller {
+    padding: 15px;
+}
+
+.main .about-seller .head {
+    display: flex;
+    grid-gap: 10px;
+}
+
+.main .about-seller .head h2 {
+    font-size: 16px;
+}
+
+.main .about-seller .head .seller-img {
+    width: 50px;
+    height: 50px;
+}
+
+.main .about-seller .head .seller-img img {
+    border: none;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
 }

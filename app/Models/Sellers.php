@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static inRandomOrder()
+ * @method static where(string $string)
  */
-class Category extends Model
+class Sellers extends Model
 {
     use HasFactory;
 }

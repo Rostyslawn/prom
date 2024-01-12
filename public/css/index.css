@@ -242,16 +242,19 @@
 
 .main .most-popular .items .item .product_name {
     overflow: hidden;
-    max-height: 40px;
+    max-height: 50px;
 }
 
 .main .most-popular .items .item .product {
     display: flex;
     flex-direction: column;
+    width: 94px;
+    height: 166px;
 }
 
 .main .most-popular .items .item .product .prices {
     margin-top: auto;
+    margin-bottom: 0;
 }
 
 /* Styles for hope-you & most-popular */

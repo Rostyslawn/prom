@@ -32,10 +32,10 @@ carousels.forEach(slider => {
 });
 
 const setTimer = () => {
-    if (timeOutSet) {
-        timeOutSet = false;
-        setTimeout(() => timeOutSet = true, 5000);
-    }
+    if (!timeOutSet) return;
+
+    timeOutSet = false;
+    setTimeout(() => timeOutSet = true, 10000);
 };
 
 const main_ch_to_l = () => {
@@ -76,7 +76,7 @@ function moveCarousel() {
 
     setTimer();
 
-    setTimeout(moveCarousel, 5000);
+    setTimeout(moveCarousel, 10000);
 }
 
-setTimeout(moveCarousel, 5000);
+setTimeout(moveCarousel, 10000);
