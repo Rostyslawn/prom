@@ -15,7 +15,8 @@ class PageController extends Controller
 //            ->get();
 //        dd($mostPopularProducts);
 
-        $products = Products::leftJoin("categories", "categories.id", "products.category_id")
+        $products = Products::// inRandomOrder()
+            leftJoin("categories", "categories.id", "products.category_id")
             ->select("products.*", "categories.name as category_name")
             ->distinct()
             ->get();

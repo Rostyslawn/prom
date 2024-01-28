@@ -12,7 +12,8 @@ class ProductController extends Controller
         $product_name = $request->input("product_name");
         $product_data = Products::where("name", $product_name)->first();
         $sellers_data = Sellers::where("name", $product_data->seller)->first();
-        $products = Products::leftJoin("categories", "categories.id", "products.category_id")
+        $products = Products::// inRandomOrder()
+            leftJoin("categories", "categories.id", "products.category_id")
             ->select("products.*", "categories.name as category_name")
             ->distinct()
             ->get();

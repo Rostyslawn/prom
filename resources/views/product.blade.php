@@ -115,12 +115,14 @@
             <div class="item">
                 <img src="{{$product->img}}" alt="product" class="product_img">
                 <div class="head">
-                    @if($product->sale)
-                        <div class="old-price">{{ $product->price }} ₴</div>
-                        <div class="sale">{{ $product->sale }} ₴</div>
-                    @else
-                        <div class="price">{{ $product->price }} ₴</div>
-                    @endif
+                    <div class="prices">
+                        @if($product->sale)
+                            <div class="old-price">{{ $product->price }} ₴</div>
+                            <div class="sale">{{ $product->sale }} ₴</div>
+                        @else
+                            <div class="price">{{ $product->price }} ₴</div>
+                        @endif
+                    </div>
                     <div class="product_name">
                         <a href="{{route('product', ["product_name" => $product->name])}}">{{ $product->name }}</a>
                     </div>
@@ -132,7 +134,9 @@
             </div>
         @endforeach
     </div>
-    <div class="show-more-div block"><button class="show-more">Показати ще</button></div>
+    <div class="show-more-div block">
+        <button class="show-more">Показати ще</button>
+    </div>
     @include('components.footer')
     @include("components.modals")
 @endsection

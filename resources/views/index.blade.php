@@ -105,7 +105,9 @@
                                     @foreach($products->take(3) as $product)
                                         <div class="product">
                                             <img class="product_img" alt="product" src="{{ $product->img }}">
-                                            <div class="product_name"><a href="{{route('product', ["product_name" => $product->name])}}">{{ $product->name }}</a></div>
+                                            <div class="product_name"><a
+                                                    href="{{route('product', ["product_name" => $product->name])}}">{{ $product->name }}</a>
+                                            </div>
                                             <div class="prices">
                                                 @if($product->sale)
                                                     <div class="old-price">{{ $product->price }} ₴</div>
@@ -165,12 +167,14 @@
                         <div class="item">
                             <img src="{{$product->img}}" alt="product" class="product_img">
                             <div class="head">
-                                @if($product->sale)
-                                    <div class="old-price">{{ $product->price }} ₴</div>
-                                    <div class="sale">{{ $product->sale }} ₴</div>
-                                @else
-                                    <div class="price">{{ $product->price }} ₴</div>
-                                @endif
+                                <div class="prices">
+                                    @if($product->sale)
+                                        <div class="old-price">{{ $product->price }} ₴</div>
+                                        <div class="sale">{{ $product->sale }} ₴</div>
+                                    @else
+                                        <div class="price">{{ $product->price }} ₴</div>
+                                    @endif
+                                </div>
                                 <div class="product_name">
                                     <a href="{{route('product', ["product_name" => $product->name])}}">{{ $product->name }}</a>
                                 </div>

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\MostPopularProducts;
 use App\Models\Products;
 use App\Models\Sellers;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -17,6 +18,7 @@ class ProductsSeeder extends Seeder
     {
         Sellers::factory()->times(30)->create();
         Products::factory()->times(1000)->create();
+        MostPopularProducts::factory()->times(100)->create();
 
 //        DB::statement("truncate table products");
 //

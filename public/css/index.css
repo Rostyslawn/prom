@@ -167,6 +167,11 @@
     text-decoration: underline;
 }
 
+.main .prices {
+    margin-top: 5px;
+    height: 40px;
+}
+
 .main .price {
     font-weight: 600;
 }

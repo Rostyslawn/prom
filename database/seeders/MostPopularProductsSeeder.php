@@ -14,6 +14,6 @@ class MostPopularProductsSeeder extends Seeder
      */
     public function run(): void
     {
-        MostPopularProducts::factory()->times(100)->create();
+//        MostPopularProducts::factory()->times(100)->create();
     }
 }
