@@ -6,6 +6,7 @@
     <link rel="icon" href="{{asset('imgs/icon.jpg')}}">
     <link rel="stylesheet" href="{{asset('css/nav.css')}}">
     <link rel="stylesheet" href="{{asset('css/modals.css')}}">
+    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
     @yield("styles")
     <title>@yield("title", "Prom")</title>
 </head>

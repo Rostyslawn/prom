@@ -105,6 +105,35 @@
             </div>
         </div>
     </div>
+    <div class="another-products">
+        @foreach($another_products as $categoryId => $products)
+            @php
+                $uniqueProducts = $products->unique("id")->take(20);
+            @endphp
+        @endforeach
+        @foreach($uniqueProducts as $product)
+            <div class="item">
+                <img src="{{$product->img}}" alt="product" class="product_img">
+                <div class="head">
+                    @if($product->sale)
+                        <div class="old-price">{{ $product->price }} ₴</div>
+                        <div class="sale">{{ $product->sale }} ₴</div>
+                    @else
+                        <div class="price">{{ $product->price }} ₴</div>
+                    @endif
+                    <div class="product_name">
+                        <a href="{{route('product', ["product_name" => $product->name])}}">{{ $product->name }}</a>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button>Купити</button>
+                    <img src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like">
+                </div>
+            </div>
+        @endforeach
+    </div>
+    <div class="show-more-div block"><button class="show-more">Показати ще</button></div>
+    @include('components.footer')
     @include("components.modals")
 @endsection
 @section('scripts')
