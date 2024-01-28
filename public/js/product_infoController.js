@@ -27,7 +27,7 @@ const closeAllCharacteristics = () => {
     showAllCharacteristicsBtn.style.display = "block";
 
     main_characteristics.removeChild(document.querySelector(".closeAllCharacteristics"));
-    main_characteristics.style.height = 171 + "px";
+    main_characteristics.style.height = 191 + "px";
 
     characteristicsStatus = false;
 }

@@ -10,7 +10,6 @@ body, .nav, .nav form input {
     display: flex;
     align-items: center;
     gap: 10px;
-    height: 20px;
 }
 
 .category-nav .item a {
@@ -29,6 +28,7 @@ body, .nav, .nav form input {
 }
 
 .category-nav .arrow img {
+    display: flex;
     width: 100%;
     height: 100%;
 }
@@ -261,6 +261,10 @@ body, .nav, .nav form input {
     padding: 15px;
 }
 
+.main .delivery h2 {
+    font-size: 18px;
+}
+
 .main .delivery .delivery-service {
     display: flex;
     align-content: center;
@@ -287,6 +291,9 @@ body, .nav, .nav form input {
 }
 
 .main .about-seller {
+    display: flex;
+    grid-gap: 5px;
+    flex-direction: column;
     padding: 15px;
 }
 
@@ -309,4 +316,41 @@ body, .nav, .nav form input {
     border-radius: 50%;
     width: 100%;
     height: 100%;
+}
+
+.main .about-seller .head .seller-rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 2px;
+}
+
+.main .about-seller .seller-data {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+}
+
+.main .about-seller .seller-data > * {
+    display: flex;
+    flex-direction: row;
+}
+
+.main .about-seller .seller-data > :first-child {
+    grid-gap: 10px;
+}
+
+.main .about-seller .seller-data > :last-child {
+    justify-content: space-between;
+}
+
+.main .about-seller .seller-data > :last-child .item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background: #e8e8f3;
+    border-radius: 30px;
+    height: 32px;
+    overflow: hidden;
 }

@@ -39,10 +39,21 @@
                     <div class="seller-img">
                         <img src="{{$sellers_data->img}}">
                     </div>
-                    <div>
-{{--                    fix paddings    --}}
+                    <div class="seller-rating">
                         <h2>Продавець {{$sellers_data->name}}</h2>
                         <div>{{$sellers_data->rating}} Вiдгукiв</div>
+                    </div>
+                </div>
+                <div class="seller-data">
+                    <div>
+                        <div class="date">багато рокiв</div>
+                        <div class="orders">4000+ замовлень</div>
+                    </div>
+                    <div>
+                        <div class="item"><a href="#">Каталог продавця</a></div>
+                        <div class="item"><a href="#">Каталог продавця</a></div>
+                        <div class="item"><a href="#">Каталог продавця</a></div>
+                        <div class="item"><a href="#">Каталог продавця</a></div>
                     </div>
                 </div>
             </div>
@@ -85,6 +96,7 @@
                 <img src="{{asset('imgs/cards.png')}}">
             </a>
             <div class="item-margin item delivery">
+                <h2>Доставка</h2>
                 <div class="delivery-service">
                     <img src="{{asset('imgs/novaposhta.jpg')}}">
                     <span>Нова пошта</span>
@@ -93,10 +105,7 @@
             </div>
         </div>
     </div>
-    <div class="modals">
-        <div onclick="close_modals()" class="modal-bg"></div>
-
-    </div>
+    @include("components.modals")
 @endsection
 @section('scripts')
     <script src="{{asset('js/modalsProduct.js')}}"></script>
