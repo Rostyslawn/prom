@@ -13,6 +13,5 @@
 @yield("content")
 @yield("scripts")
 <script src="{{asset('js/modals.js')}}"></script>
-@vite("resources/js/hijnja.js")
 </body>
 </html>
