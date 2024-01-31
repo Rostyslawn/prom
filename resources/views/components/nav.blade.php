@@ -23,11 +23,11 @@
             <img src="{{asset('imgs/login.png')}}" alt="login">
             <div>Увiйти</div>
         </div>
-        <div href="{{route('likes')}}" class="btn-head likes">
+        <div href="#" class="btn-head likes">
             <img src="{{asset('imgs/likes.png')}}" alt="likes">
             <div>Бажане</div>
         </div>
-        <div href="{{route('cart')}}" class="btn-head cart">
+        <div href="#" class="btn-head cart">
             <img src="{{asset('imgs/cart.png')}}" alt="cart">
             <div>Кошик</div>
         </div>

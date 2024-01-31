@@ -306,11 +306,42 @@ body, .nav, .nav form input {
     background: #f1f1f9;
 }
 
+/* About seller */
 .main .about-seller {
+    position: relative;
     display: flex;
     grid-gap: 5px;
     flex-direction: column;
     padding: 15px;
+}
+
+.main .about-seller .buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    grid-gap: 20px;
+}
+
+.main .about-seller .buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    width: 28px;
+    height: 28px;
+}
+
+.main .about-seller .buttons button:hover {
+    transition: 0.3s;
+    background: #f1f1f9;
+}
+
+.main .about-seller .buttons button img {
+    width: 20px;
+    height: 20px;
 }
 
 .main .about-seller .head {
@@ -347,20 +378,14 @@ body, .nav, .nav form input {
     grid-gap: 10px;
 }
 
-.main .about-seller .seller-data > * {
+.main .about-seller .seller-data .div {
     display: flex;
     flex-direction: row;
-}
-
-.main .about-seller .seller-data > :first-child {
     grid-gap: 10px;
 }
 
-.main .about-seller .seller-data > :last-child {
-    justify-content: space-between;
-}
-
-.main .about-seller .seller-data > :last-child .item {
+.main .about-seller .seller-data .data-links .item {
+    font-size: 14px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -369,6 +394,10 @@ body, .nav, .nav form input {
     border-radius: 30px;
     height: 32px;
     overflow: hidden;
+}
+
+.main .about-seller .seller-data .data-links .reviews span {
+    font-weight: 700;
 }
 
 /* Another products */

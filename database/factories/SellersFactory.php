@@ -22,10 +22,7 @@ class SellersFactory extends Factory
             "img" => $faker->imageUrl,
             "name" => $faker->company,
             "rating" => $faker->numberBetween(0,10),
+            "reviews" => $faker->numberBetween(0, 1000),
         ];
-
-//        $table->string("profile_img");
-//        $table->string("seller_name");
-//        $table->integer("rating");
     }
 }

@@ -20,6 +20,6 @@ Route::get('/', [PageController::class, "index"])->name("index");
 Route::post('/auth', [AuthController::class, 'auth'])->name("auth");
 Route::post('/registration', [RegController::class, 'reg'])->name("reg");
 Route::get('/product', [ProductController::class, "index"])->name("product");
-// Fix routes
-Route::get('/likes', [PageController::class, 'index'])->name('likes');
-Route::get('/cart', [PageController::class, 'index'])->name('cart');
+// to-do all routes
+//Route::get('/likes', [PageController::class, 'index'])->name('likes');
+//Route::get('/cart', [PageController::class, 'index'])->name('cart');

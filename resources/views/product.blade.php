@@ -19,6 +19,7 @@
             <div class="item-margin item about-product">
                 <h2>Характеристики та опис</h2>
                 <div class="main-characteristics">
+{{--                to-do: add characteristics    --}}
                     <span class="title">Основнi</span>
                     <div>Країна виробник: <span>{{$product_data->country_of_origin}}</span></div>
                     <div>Кiлькiсть: <span>{{$product_data->amount}}</span></div>
@@ -35,6 +36,14 @@
                 </div>
             </div>
             <div class="item-margin item about-seller">
+                <div class="buttons">
+                    <button class="share">
+                        <img src="{{asset('imgs/share.png')}}" alt="share">
+                    </button>
+                    <button class="like">
+                        <img src="{{asset('imgs/heartWithOutBG.png')}}" alt="like">
+                    </button>
+                </div>
                 <div class="head">
                     <div class="seller-img">
                         <img src="{{$sellers_data->img}}">
@@ -45,15 +54,15 @@
                     </div>
                 </div>
                 <div class="seller-data">
-                    <div>
+                    <div class="div data">
                         <div class="date">багато рокiв</div>
                         <div class="orders">4000+ замовлень</div>
                     </div>
-                    <div>
-                        <div class="item"><a href="#">Каталог продавця</a></div>
-                        <div class="item"><a href="#">Каталог продавця</a></div>
-                        <div class="item"><a href="#">Каталог продавця</a></div>
-                        <div class="item"><a href="#">Каталог продавця</a></div>
+                    <div class="div data-links">
+{{--                    to-do: all routes    --}}
+                        <div class="item catalog"><a href="#">Каталог продавця</a></div>
+                        <div class="item contacts"><a href="#">Контакти</a></div>
+                        <div class="item reviews"><a href="#">Вiдгуки <span>{{$sellers_data->reviews}}</span></a></div>
                     </div>
                 </div>
             </div>
