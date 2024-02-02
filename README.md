@@ -1,42 +1,30 @@
 ## Requirements
 
-This repository contains a project created using the Laravel framework, and to successfully run it, you will need to install XAMPP and Laravel.
+This repository contains a project created using the Laravel framework, and to successfully run it, you will need to install XAMPP, Laravel and Npm.
 
 ## Running the Project
 
 To run the project, follow these steps:
 - Rename file ".env.example" to ".env"
 
-1. Update the project's dependencies using Composer:
+1. Install npm requirements:
 
-    ```bash
-    composer update
-    ```
+```bash
+npm i
+```
 
-2. Generate the application key:
+2. Update composer and create, seed database:
+```bash
+npm run start-project 
+```
 
-    ```bash
-    php artisan key:generate
-    ```
-
-3. Run the database migrations:
-
-    ```bash
-    php artisan migrate:f
-    ```
-
-4. Optionally, seed the database with initial data:
-
-    ```bash
-    php artisan db:seed
-    ```
-
-5. Start the development server:
-
-    ```bash
-    php artisan serve
-    ```
-
-**Project Description:**
+3. Start the development server:
+```bash
+npm run all
+```
+or
+```bash
+php artisan serve
+```
 
 Author: Rostyslawn02
