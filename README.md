@@ -22,9 +22,5 @@ npm run start-project
 ```bash
 npm run all
 ```
-or
-```bash
-php artisan serve
-```
 
 Author: Rostyslaw
