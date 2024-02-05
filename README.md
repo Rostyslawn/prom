@@ -27,4 +27,4 @@ or
 php artisan serve
 ```
 
-Author: Rostyslawn02
+Author: Rostyslaw
