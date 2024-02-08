@@ -10,7 +10,7 @@
 @section("content")
     <div class="header block">
         <div class="container">
-            <div class="left-side categories">
+            <div id="left-side" class="left-side categories">
                 <div class="item">
                     <a href="#">Military</a>
                 </div>
@@ -80,7 +80,7 @@
                     <img src="{{asset('imgs/arrow.png')}}" alt="swap to the right">
                 </div>
             </div>
-            <div class="right-side">
+            <div id="right-side" class="right-side">
                 <div>Продавати по всій <br> Україні</div>
                 <button><a href="#">Створити магазин</a></button>
             </div>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Тебе зацiкавить</h2>
+            <h2 class="hope-you-h2">Тебе зацiкавить</h2>
             <div class="hope-you container-item">
                 <div class="items">
                     <div class="btn btn-left">
@@ -259,8 +259,8 @@
                     </span>
                 </div>
                 <div class="right-side">
-                    <a href="#">Перейти в кабінет компанії</a>
-                    <a href="#">Перейти в особистий кабiнет</a>
+                    <a>Перейти в кабінет компанії</a>
+                    <a onclick="modals(); open_auth_menu()">Перейти в особистий кабiнет</a>
                 </div>
             </div>
         </div>

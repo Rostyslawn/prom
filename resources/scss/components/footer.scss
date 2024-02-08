@@ -7,6 +7,10 @@
         font-size: 16px;
     }
 
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+
     a:hover {
         text-decoration: underline;
     }
