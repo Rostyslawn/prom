@@ -155,7 +155,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Для тебе</h2>
+            <h2 class="for-you-h2">Для тебе</h2>
             <div class="for-you container-item">
                 <div class="items">
                     @foreach($AllProducts as $categoryId => $products)

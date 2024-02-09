@@ -134,7 +134,7 @@
     color: #7b04df;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1279px) {
     .header #left-side {
         margin-right: 20px;
         width: 50%;
@@ -227,10 +227,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .main h2 {
-        text-align: center;
-    }
-
     .main .most-popular {
         display: flex;
         justify-content: center;
@@ -244,6 +240,33 @@
 
     .main .most-popular .items .item {
         width: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+    .main .most-popular {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main .most-popular .slider-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+    }
+
+    .main .most-popular .items .item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .main h2 {
+        text-align: center;
+    }
+
+    .main .most-popular .btn {
+        display: none;
     }
 }
 
@@ -332,7 +355,7 @@
     transition: 0.3s;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1279px) {
     .main .hope-you, .main .hope-you-h2 {
         display: none;
     }
@@ -387,6 +410,17 @@
     .main .for-you .items {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+    .main .for-you-h2 {
+        text-align: center;
+    }
+
+    .main .for-you .items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 

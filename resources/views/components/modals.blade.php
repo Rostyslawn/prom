@@ -39,7 +39,7 @@
         </div>
         <div class="item start-selling">
             <img src="{{asset('imgs/trade.png')}}" class="icon" alt="Start selling on prom">
-            <span>Почати продавати на prom.ua</span>
+            <span>Почати продавати на prom</span>
         </div>
         <div class="item support">
             <img src="{{asset('imgs/telegram.png')}}" class="icon" alt="Prom-support">
@@ -94,7 +94,7 @@
                 <div onclick="open_reg_menu()">Зареєструйтесь</div>
             </div>
             <h3 class="peoples">2 600 000</h3>
-            <span>відвідувачів кожен день на prom.ua.</span>
+            <span>відвідувачів кожен день на prom.</span>
             <span>Реєструйся, додавай товари, продавай по всій Україні</span>
             <button class="become-seller">Стати продавцем</button>
         </div>
@@ -127,7 +127,7 @@
                 </label>
                 <span class="receive-checkbox">
                     <input name="receive_prom_offers" type="checkbox">
-                    <label for="custom-checkbox">Я хочу отримувати цікаві пропозиції від prom.ua</label>
+                    <label for="custom-checkbox">Я хочу отримувати цікаві пропозиції від prom</label>
                 </span>
                 <button type="submit" class="auth submit">Зареєструватися</button>
             </form>
@@ -135,7 +135,7 @@
                 Реєструючись, ви погоджуєтеся з
                 <a href="#">угодою користувача</a>
                 <a href="#">політикою конфіденційності</a>
-                маркетплейсу prom.ua
+                маркетплейсу prom
             </div>
             <span class="login-with-text">Або увійдіть за допомогою:</span>
             <div class="login-with">
@@ -157,7 +157,7 @@
         <hr>
         <div class="users">
             <h3>2 600 000</h3>
-            <span>відвідувачів кожен день на prom.ua.</span> <br>
+            <span>відвідувачів кожен день на prom.</span> <br>
             <span>Реєструйся, додавай товари, продавай по всій Україні</span>
         </div>
     </div>

@@ -6,12 +6,12 @@
             <span><a href="#">Пром-підтримка</a></span>
             <span><a href="#">Як купувати з Пром-оплатою</a></span>
             <span><a href="#">Рекомендації з безпечних покупок</a></span>
-            <span><a href="#">Перевірка на приналежність сайту до платформи prom.ua</a></span>
+            <span><a href="#">Перевірка на приналежність сайту до платформи prom</a></span>
         </div>
         <div class="column">
             <h2>Продавцям</h2>
             <span><a href="#">Довідка для продавців</a></span>
-            <span><a href="#">Як почати продавати на prom.ua</a></span>
+            <span><a href="#">Як почати продавати на prom</a></span>
             <span><a href="#">Тарифи</a></span>
             <span><a href="#">Просування в каталозі ProSale</a></span>
             <span><a href="#">Sprava.prom — медіа для підприємців</a></span>
@@ -24,7 +24,7 @@
         <div class="column">
             <h2>Про нас</h2>
             <span><a href="#">Про prom</a></span>
-            <span><a href="#">Работа в prom.ua</a></span>
+            <span><a href="#">Работа в prom</a></span>
             <span><a href="#">Контактна інформація</a></span>
             <span><a href="#">Захист легальності контенту</a></span>
             <span><a href="#">Content legality protection</a></span>

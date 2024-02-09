@@ -28,6 +28,12 @@ a {
             padding: 0 50px;
         }
     }
+
+    @media screen and (min-width: 769px) and (max-width: 1279px) {
+        & {
+            padding: 0 100px;
+        }
+    }
 }
 
 button {
