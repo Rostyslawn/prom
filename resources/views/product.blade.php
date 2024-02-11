@@ -19,7 +19,6 @@
             <div class="item-margin item about-product">
                 <h2>Характеристики та опис</h2>
                 <div class="main-characteristics">
-                    {{--                to-do: add characteristics    --}}
                     <span class="title">Основнi</span>
                     <div>Країна виробник: <span>{{$product_data->country_of_origin}}</span></div>
                     <div>Кiлькiсть: <span>{{$product_data->amount}}</span></div>

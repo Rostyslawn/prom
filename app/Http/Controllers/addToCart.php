@@ -9,11 +9,11 @@ class addToCart extends Controller
 {
     public function addToCart(Request $request)
     {
-        $username = $request->input("username");
+        $user_id = session("user")->id;
         $product_id = $request->input("product_id");
 
         $product = new Cart();
-        $product->username = $username;
+        $product->user_id = $user_id;
         $product->product_id = $product_id;
         $product->save();
 

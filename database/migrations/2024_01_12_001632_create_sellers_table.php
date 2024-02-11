@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sellers', function (Blueprint $table) {
-            // to-do: Add a registration date field and display it in product.blade.php.
             $table->id();
             $table->string("img");
             $table->string("name");

@@ -162,3 +162,4 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('js/inputs.js') }}"></script>

@@ -1,7 +1,6 @@
 @extends("app.my-layout")
 @section('scripts')
     <script src="{{asset('js/carousel.js')}}"></script>
-    <script src="{{asset('js/inputs.js')}}"></script>
 @endsection
 @section("styles")
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
@@ -185,7 +184,6 @@
                                     <form method="POST" action="{{ route('addToCart') }}">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <input type="hidden" name="username" value="{{ session("user")->username }}">
                                         <button type="submit" class="like"><img src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like"></button>
                                     </form>
                                 @else

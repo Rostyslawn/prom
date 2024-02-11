@@ -10,9 +10,11 @@ class CartController extends Controller
 {
     public function index(Request $request)
     {
-        $username = $request->input("username");
-        $cart = Cart::where("username", $username)->get();
+        if(!session("user")) return redirect()->back();
+
+        $user_data = session("user");
         $product_data = [];
+        $cart = Cart::where("user_id", $user_data->id)->get();
 
         foreach ($cart as $el) {
             $product_data[] = Products::where("id", $el->product_id)->first();
