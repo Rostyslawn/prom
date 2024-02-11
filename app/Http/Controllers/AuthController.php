@@ -14,7 +14,7 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'login' => 'required | string | min: 4 | max: 16',
-//            'password' => 'required | string | min: 4 | max: 16',
+            'password' => 'required | string | min: 4 | max: 16',
         ]);
 
 //        $errors = $validator->errors()->getMessages();
@@ -28,28 +28,21 @@ class AuthController extends Controller
 //        if(count($errors)) return back()->with($errors);
 
         if($validator->fails())
-            return back()->withErrors($validator->errors());
+            return response()->json(["errorValidator" => $validator->errors()]);
 
         $phone = $request->input("login");
-//        $password = $request->input("password");
+        $password = $request->input("password");
 
         $data = User::where("phone_number", $phone)
             ->first();
 
         if(!$data)
-            return back()->withErrors("User not found");
+            return response()->json(["error" => "Invalid phone number"]);
 
-//        if(!$data) {
-//            echo "Пользователь не найден";
-//            return;
-//        }
-
-//        if(!Hash::check($password, $data->password))
-//            return back()->withErrors("Wrong password");
-//        else
-//            return back()->with("user", $data);
+        if(!Hash::check($password, $data->password))
+            return response()->json(["error" => "Invalid password"]);
 
         session()->put("user", $data);
-        return back();
+        return response()->json(["message" => "Login successful"]);
     }
 }

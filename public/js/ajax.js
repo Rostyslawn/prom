@@ -1,5 +1,5 @@
 let productsDiv = document.querySelector(".for-you .items");
-let CsrfToken = null;
+let CsrfToken;
 
 const showMoreButton = document.querySelector(".show-more");
 const hideButton = document.createElement("button");
@@ -60,7 +60,7 @@ const show_more_products = (url) => {
                         <button class="buy">Купити</button>
                         ${session_user ? `
                         <form method="POST" action="/addToCart">
-                            <input type="hidden" name="_token" value="${csrfToken}">
+                            <input type="hidden" name="_token" value="${getCsrfToken()}">
                             <input type="hidden" name="product_id" value="${product.id}">
                             <button type="submit" class="like">
                             <img src="/imgs/heartWithOutBG.png" alt="like" class="like">
@@ -83,6 +83,55 @@ const show_more_products = (url) => {
         hideButton.innerHTML = "Приховати";
         hideButton.addEventListener("click", hide_more_products);
         document.querySelector(".show-more-div").appendChild(hideButton);
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+const authorization = (url) => {
+    const phone_number = document.querySelector(".telephone-number").value;
+    const password = document.querySelector(".password").value;
+
+    let data = {
+        login: phone_number,
+        password: password,
+    };
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': getCsrfToken()
+        },
+        body: JSON.stringify(data)
+    }).then(response => {
+        if (response.ok) return response.json();
+        throw new Error('Network response was not ok.');
+    }).then(data => {
+        const errorsDiv = document.querySelector(".authorization .errors");
+
+        if (data.errorValidator) {
+            const errorValidator = data.errorValidator;
+            errorsDiv.classList.add("red");
+            errorsDiv.innerHTML = "";
+            Object.keys(errorValidator).forEach((fieldName) => {
+                errorValidator[fieldName].forEach((errorMessage) => {
+                    errorsDiv.insertAdjacentHTML("beforeend", `${errorMessage}`);
+                });
+            });
+            return;
+        }
+
+        if (data.error) {
+            const errors = `${data.error}`;
+            errorsDiv.classList.add("red");
+            errorsDiv.innerHTML = errors;
+            return;
+        }
+
+        errorsDiv.classList.add("green");
+        errorsDiv.innerHTML = `Successful authorization`;
+        document.querySelector(".auth").removeAttribute("onclick");
     }).catch(error => {
         console.error('Error:', error);
     });

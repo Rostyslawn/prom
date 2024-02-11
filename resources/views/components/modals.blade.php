@@ -68,15 +68,13 @@
             </div>
             <h3>Увійти в кабінет</h3>
             <span>Увійдіть, щоб додавати товари до бажаного, <br> писати продавцям і бачити свої замовлення</span>
-            <form action="{{ route("auth") }}" method="POST">
-                @csrf
-                <div class="insert-number">Введіть телефон <span>*</span></div>
-                <label>
-                    <input name="login" placeholder="+380 (__) ___-__-__" class="telephone-number input-event">
-                    {{--                    <input name="password" placeholder="password">--}}
-                </label>
-                <button type="submit" class="auth submit">Увiйти</button>
-            </form>
+            <div class="insert-number">Введіть телефон <span>*</span></div>
+            <label>
+                <input name="login" placeholder="+380 (__) ___-__-__" class="telephone-number input-event">
+                <input name="password" placeholder="password" class="password">
+            </label>
+            <div class="errors"></div>
+            <button onclick="authorization('{{route("ajax.auth")}}')" type="submit" class="auth submit">Увiйти</button>
             <span class="login-with-text">Або увійдіть за допомогою:</span>
             <div class="login-with">
                 <div class="elem">
