@@ -10,7 +10,7 @@ const getCsrfToken = () => {
 }
 
 const hide_more_products = () => {
-    for(let i = 15; i > 0; i--) {
+    for (let i = 15; i > 0; i--) {
         productsDiv.removeChild(productsDiv.children[i]);
         hideButton.remove();
         showMoreButton.hidden = false;
@@ -19,7 +19,8 @@ const hide_more_products = () => {
 
 const show_more_products = (url) => {
     let data = {
-        products: []
+        products: [],
+        session_user: null,
     };
 
     fetch(url, {
@@ -35,47 +36,46 @@ const show_more_products = (url) => {
     }).then(data => {
         if (data.products.length === 0) return;
 
+        const session_user = data.session_user;
         const products = data.products;
 
         products.forEach((product) => {
-            const item = document.createElement('div');
-            item.classList.add('item');
-
-            let priceElement;
-
-            // FIX HTML
-            if (product.sale) {
-                priceElement = `
-                    <div class="prices">
-                        <div class="old-price">${product.price} ₴</div>
-                        <div class="sale">${product.sale} ₴</div>
-                    </div>`;
-            } else {
-                priceElement = `
-                    <div class="prices">
-                        <div class="price">${product.price} ₴</div>
-                    </div>`;
-            }
-
-            item.innerHTML = `
-                <img src="${product.img}" alt="${product.name}" class="product_img">
-                <div class="head">
-                    ${priceElement}
-                    <div class="product_name">
-                        <a href="${'{{ route("product", ["product_name" => "product->name"]) }}'}">${product.name}</a>
+            const productHtml = `
+                <div class="item">
+                    <img src="${product.img}" alt="${product.name}" class="product_img">
+                    <div class="head">
+                        <div class="prices">
+                            ${product.sale ? `
+                                <div class="old-price">${product.price} ₴</div>
+                                <div class="sale">${product.sale} ₴</div>
+                            ` : `
+                                <div class="price">${product.price} ₴</div>
+                            `}
+                        </div>
+                        <div class="product_name">
+                            <a href="/product?product_name=${product.name}">${product.name}</a>
+                        </div>
                     </div>
-                </div>
-                <div class="buttons">
-                    <button class="buy">Купити</button>
-                    <form method="POST" action="{{ route('addToCart') }}">
-                        @csrf
-                        <input type="hidden" name="product_id" value="${product.id}">
-                        <button type="submit" class="like"><img src="{{ asset('imgs/heartWithOutBG.png') }}" alt="like" class="like"></button>
-                    </form>
+                    <div class="buttons">
+                        <button class="buy">Купити</button>
+                        ${session_user ? `
+                        <form method="POST" action="/addToCart">
+                            <input type="hidden" name="_token" value="${csrfToken}">
+                            <input type="hidden" name="product_id" value="${product.id}">
+                            <button type="submit" class="like">
+                            <img src="/imgs/heartWithOutBG.png" alt="like" class="like">
+                            </button>
+                        </form>
+                        ` : `
+                            <button class="like" disabled>
+                                <img src="/imgs/heartWithOutBG.png" alt="like" class="like">
+                            </button>
+                        `}
+                    </div>
                 </div>
             `;
 
-            productsDiv.appendChild(item);
+            productsDiv.insertAdjacentHTML('beforeend', productHtml);
         });
 
         showMoreButton.hidden = true;

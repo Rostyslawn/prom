@@ -9,6 +9,8 @@ class addToCart extends Controller
 {
     public function addToCart(Request $request)
     {
+        if(!session("user")) return redirect()->back();
+
         $user_id = session("user")->id;
         $product_id = $request->input("product_id");
 
