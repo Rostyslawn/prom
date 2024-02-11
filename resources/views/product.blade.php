@@ -19,7 +19,7 @@
             <div class="item-margin item about-product">
                 <h2>Характеристики та опис</h2>
                 <div class="main-characteristics">
-{{--                to-do: add characteristics    --}}
+                    {{--                to-do: add characteristics    --}}
                     <span class="title">Основнi</span>
                     <div>Країна виробник: <span>{{$product_data->country_of_origin}}</span></div>
                     <div>Кiлькiсть: <span>{{$product_data->amount}}</span></div>
@@ -59,7 +59,6 @@
                         <div class="orders">4000+ замовлень</div>
                     </div>
                     <div class="div data-links">
-{{--                    to-do: all routes    --}}
                         <div class="item catalog"><a href="#">Каталог продавця</a></div>
                         <div class="item contacts"><a href="#">Контакти</a></div>
                         <div class="item reviews"><a href="#">Вiдгуки <span>{{$sellers_data->reviews}}</span></a></div>
@@ -71,7 +70,16 @@
             <div class="item product-info">
                 <span class="head">
                     <div class="product_name">{{$product_data->name}}, {{$product_data->amount}}шт.</div>
-                    <button class="like"><img alt="like" src="{{asset('imgs/purpleHeart.png')}}"></button>
+                    @if(session("user"))
+                        <form method="POST" action="{{ route('addToCart') }}">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $product_data->id }}">
+                        <input type="hidden" name="username" value="{{ session("user")->username }}">
+                        <button type="submit" class="like"><img alt="like" src="{{asset('imgs/purpleHeart.png')}}"></button>
+                        </form>
+                    @else
+                        <button class="like"><img alt="like" src="{{asset('imgs/purpleHeart.png')}}"></button>
+                    @endif
                 </span>
                 <div class="delivery-status">
                     @if($product_data->amount > 0)

@@ -27,9 +27,16 @@
             <img src="{{asset('imgs/likes.png')}}" alt="likes">
             <div>Бажане</div>
         </div>
-        <div href="#" class="btn-head cart">
-            <img src="{{asset('imgs/cart.png')}}" alt="cart">
-            <div>Кошик</div>
-        </div>
+        @if(session("user"))
+            <a href="{{ route("cart", ["username" => session("user")->username]) }}" class="btn-head cart">
+                <img src="{{asset('imgs/cart.png')}}" alt="cart">
+                <div>Кошик</div>
+            </a>
+        @else
+            <a href="#" class="btn-head cart">
+                <img src="{{asset('imgs/cart.png')}}" alt="cart">
+                <div>Кошик</div>
+            </a>
+        @endif
     </div>
 </div>

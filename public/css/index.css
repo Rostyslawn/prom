@@ -456,7 +456,7 @@
     margin-bottom: 0;
 }
 
-.main .for-you .buttons button {
+.main .for-you .buttons .buy {
     font-weight: 700;
     color: white;
     border: none;
@@ -467,6 +467,8 @@
 }
 
 .main .for-you .buttons .like {
+    border: none;
+    background: none;
     cursor: pointer;
     width: 22px;
     height: 22px;
