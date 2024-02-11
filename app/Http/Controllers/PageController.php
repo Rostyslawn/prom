@@ -13,7 +13,6 @@ class PageController extends Controller
 //            ->leftJoin("categories", "categories.id", "most_popular_products.category_id")
 //            ->select("most_popular_products.*", "categories.name as category_name")
 //            ->get();
-//        dd($mostPopularProducts);
 
         $products = Products::// inRandomOrder()
             leftJoin("categories", "categories.id", "products.category_id")
@@ -22,9 +21,7 @@ class PageController extends Controller
             ->get();
 
         $categories = $products->groupBy('category_id');
-
-//        dd(session()->get("user"));
-
+        
         return view('index')
             ->with('AllProducts', $categories);
     }

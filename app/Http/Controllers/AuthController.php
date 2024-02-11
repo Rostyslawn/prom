@@ -51,7 +51,5 @@ class AuthController extends Controller
 
         session()->put("user", $data);
         return back();
-
-//        return back();
     }
 }

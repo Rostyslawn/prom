@@ -129,7 +129,7 @@
         @endforeach
         @foreach($uniqueProducts as $product)
             <div class="item">
-                <img src="{{$product->img}}" alt="product" class="product_img">
+                <img src="{{$product->img}}" alt="{{$product->name}}" class="product_img">
                 <div class="head">
                     <div class="prices">
                         @if($product->sale)
@@ -151,7 +151,7 @@
         @endforeach
     </div>
     <div class="show-more-div block">
-        <button class="show-more">Показати ще</button>
+        <button onclick="show_more_products('{{route("ajax.getproducts")}}')" class="show-more container-item">Показати ще</button>
     </div>
     @include('components.footer')
     @include("components.modals")

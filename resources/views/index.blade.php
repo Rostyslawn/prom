@@ -164,7 +164,7 @@
                     @endforeach
                     @foreach($uniqueProducts as $product)
                         <div class="item">
-                            <img src="{{$product->img}}" alt="product" class="product_img">
+                            <img src="{{$product->img}}" alt="{{$product->name}}" class="product_img">
                             <div class="head">
                                 <div class="prices">
                                     @if($product->sale)
@@ -184,17 +184,24 @@
                                     <form method="POST" action="{{ route('addToCart') }}">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <button type="submit" class="like"><img src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like"></button>
+                                        <button type="submit" class="like"><img
+                                                src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like">
+                                        </button>
                                     </form>
                                 @else
-                                    <button class="like"><img src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like"></button>
+                                    <button class="like"><img src="{{asset('imgs/heartWithOutBG.png')}}" alt="like"
+                                                              class="like"></button>
                                 @endif
                             </div>
                         </div>
                     @endforeach
                 </div>
             </div>
-            <button class="show-more container-item"><span>Показати ще</span></button>
+            <div class="show-more-div">
+                <button onclick="show_more_products('{{route("ajax.getproducts")}}')" class="show-more container-item">
+                    <span>Показати ще</span>
+                </button>
+            </div>
             <h2>Що шукають</h2>
             <div class="what-find container-item">
                 <div class="items">
