@@ -90,7 +90,7 @@ const show_more_products = (url) => {
 
 const authorization = (url) => {
     const phone_number = document.querySelector(".telephone-number").value;
-    const password = document.querySelector(".password").value;
+    const password = document.querySelector(".password_auth").value;
 
     let data = {
         login: phone_number,
@@ -132,6 +132,51 @@ const authorization = (url) => {
         errorsDiv.classList.add("green");
         errorsDiv.innerHTML = `Successful authorization`;
         document.querySelector(".auth").removeAttribute("onclick");
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+const registration = (url) => {
+    const name = document.querySelector(".name").value;
+    const surname = document.querySelector(".surname").value;
+    const password = document.querySelector(".password_reg").value;
+    const phone_number = document.querySelector(".phone_number").value;
+
+    let data = {
+        name: name,
+        surname: surname,
+        password: password,
+        number: phone_number,
+    };
+
+    const errorsDiv = document.querySelector(".errors-reg");
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': getCsrfToken()
+        },
+        body: JSON.stringify(data)
+    }).then(response => {
+        if (response.ok) return response.json();
+        throw new Error('Network response was not ok.');
+    }).then(data => {
+        if (data.errorValidator) {
+            const errorValidator = data.errorValidator;
+            errorsDiv.classList.add("red");
+            errorsDiv.innerHTML = "";
+            Object.keys(errorValidator).forEach((fieldName) => {
+                errorValidator[fieldName].forEach((errorMessage) => {
+                    errorsDiv.insertAdjacentHTML("beforeend", `${errorMessage}`);
+                });
+            });
+            return;
+        }
+
+        errorsDiv.classList.add("green");
+        errorsDiv.innerHTML = data.message;
     }).catch(error => {
         console.error('Error:', error);
     });

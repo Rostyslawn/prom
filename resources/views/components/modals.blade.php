@@ -71,9 +71,9 @@
             <div class="insert-number">Введіть телефон <span>*</span></div>
             <label>
                 <input name="login" placeholder="+380 (__) ___-__-__" class="telephone-number input-event">
-                <input name="password" placeholder="password" class="password">
+                <input name="password_auth" placeholder="password" class="password_auth">
             </label>
-            <div class="errors"></div>
+            <div class="errors errors-auth"></div>
             <button onclick="authorization('{{route("ajax.auth")}}')" type="submit" class="auth submit">Увiйти</button>
             <span class="login-with-text">Або увійдіть за допомогою:</span>
             <div class="login-with">
@@ -105,30 +105,30 @@
         <div class="items">
             <h3>Створити профіль</h3>
             <span>Заповніть всі поля нижче, щоб створити свій профіль</span>
-            <form action="{{ route("reg") }}" method="POST">
-                @csrf
-                <label>
-                    <span>Ваше ім'я</span>
-                    <input class="input-event" name="name" type="text">
-                </label>
-                <label>
-                    <span>Ваше прізвище</span>
-                    <input class="input-event" name="surname" type="text">
-                </label>
-                <label class="phone-number">
-                    <span>Номер телефону <span>*</span></span>
-                    <input class="input-event" name="number" placeholder="+380 (__) ___-__-__" type="text">
-                </label>
-                <label>
-                    <span>Пароль</span>
-                    <input class="input-event" name="password" type="password">
-                </label>
-                <span class="receive-checkbox">
+            <label>
+                <span>Ваше ім'я</span>
+                <input class="name input-event" name="name" type="text">
+            </label>
+            <label>
+                <span>Ваше прізвище</span>
+                <input class="surname input-event" name="surname" type="text">
+            </label>
+            <label class="phone-number">
+                <span>Номер телефону <span>*</span></span>
+                <input class="phone_number input-event" name="number" placeholder="+380 (__) ___-__-__" type="text">
+            </label>
+            <label>
+                <span>Пароль</span>
+                <input class="password_reg input-event" name="password" type="password">
+            </label>
+            <span class="receive-checkbox">
                     <input name="receive_prom_offers" type="checkbox">
                     <label for="custom-checkbox">Я хочу отримувати цікаві пропозиції від prom</label>
-                </span>
-                <button type="submit" class="auth submit">Зареєструватися</button>
-            </form>
+            </span>
+            <div class="errors errors-reg"></div>
+            <button onclick="registration('{{route("ajax.reg")}}')" type="submit" class="auth submit">
+                Зареєструватися
+            </button>
             <div class="accepts">
                 Реєструючись, ви погоджуєтеся з
                 <a href="#">угодою користувача</a>

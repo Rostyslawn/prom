@@ -149,6 +149,16 @@
         }
     }
 
+    .authorization, .registration {
+        .errors.red {
+            color: red;
+        }
+
+        .errors.green {
+            color: #188711;
+        }
+    }
+
     /* Authorization */
     .authorization {
         .head {
@@ -174,14 +184,6 @@
             flex-direction: column;
             grid-gap: 15px;
             padding: 30px;
-
-            .red {
-                color: red;
-            }
-
-            .green {
-                color: #188711;
-            }
         }
 
         .hello {

@@ -20,8 +20,6 @@ use \App\Http\Controllers\AjaxController;
 */
 
 Route::get('/', [PageController::class, "index"])->name("index");
-//Route::post('/auth', [AuthController::class, 'auth'])->name("auth");
-Route::post('/registration', [RegController::class, 'reg'])->name("reg");
 Route::get('/product', [ProductController::class, "index"])->name("product");
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/addToCart', [addToCart::class, 'addToCart'])->name("addToCart");
@@ -29,5 +27,6 @@ Route::post('/addToCart', [addToCart::class, 'addToCart'])->name("addToCart");
 // AJAX
 Route::name("ajax.")->prefix("ajax/")->group(function () {
     Route::match(["post", "get"], '/getproducts', [AjaxController::class, 'getProducts'])->name('getproducts');
-    Route::match(["post", "get"], "/auth", [AuthController::class, "auth"])->name("auth");
+    Route::post("/auth", [AuthController::class, "auth"])->name("auth");
+    Route::post("/registration", [RegController::class, "reg"])->name("reg");
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use http\Env\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class RegController extends Controller
         ]);
 
         if($validator->fails())
-            return back()->withErrors($validator->errors());
+            return response()->json(["errorValidator" => $validator->errors()]);
 
         $name = $request->input("name");
         $surname = $request->input("surname");
@@ -30,10 +31,9 @@ class RegController extends Controller
         $user->surname = $surname;
         $user->password = $password;
         $user->phone_number = $phone_number;
+        $user->remember_token = $user->getRememberToken();
         $user->save();
 
-        return back();
-
-//        dd($name, $surname, $phone_number);
+        return response()->json(["message" => "Registration successful"]);
     }
 }
