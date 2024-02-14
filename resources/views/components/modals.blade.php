@@ -70,8 +70,8 @@
             <span>Увійдіть, щоб додавати товари до бажаного, <br> писати продавцям і бачити свої замовлення</span>
             <div class="insert-number">Введіть телефон <span>*</span></div>
             <label>
-                <input name="login" placeholder="+380 (__) ___-__-__" class="telephone-number input-event">
-                <input name="password_auth" placeholder="password" class="password_auth">
+                <input type="number" name="login" placeholder="+380 (__) ___-__-__" class="telephone-number input-event">
+                <input type="password" name="password_auth" placeholder="password" class="password_auth">
             </label>
             <div class="errors errors-auth"></div>
             <button onclick="authorization('{{route("ajax.auth")}}')" type="submit" class="auth submit">Увiйти</button>
@@ -115,11 +115,11 @@
             </label>
             <label class="phone-number">
                 <span>Номер телефону <span>*</span></span>
-                <input class="phone_number input-event" name="number" placeholder="+380 (__) ___-__-__" type="text">
+                <input type="number" class="phone_number input-event" name="number" placeholder="+380 (__) ___-__-__" type="text">
             </label>
             <label>
                 <span>Пароль</span>
-                <input class="password_reg input-event" name="password" type="password">
+                <input type="password" class="password_reg input-event" name="password" type="password">
             </label>
             <span class="receive-checkbox">
                     <input name="receive_prom_offers" type="checkbox">

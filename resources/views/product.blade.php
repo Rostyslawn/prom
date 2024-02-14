@@ -69,16 +69,11 @@
             <div class="item product-info">
                 <span class="head">
                     <div class="product_name">{{$product_data->name}}, {{$product_data->amount}}шт.</div>
-                    @if(session("user"))
-                        <form method="POST" action="{{ route('addToCart') }}">
-                        @csrf
-                        <input type="hidden" name="product_id" value="{{ $product_data->id }}">
+                        <input class="product_id" type="hidden" name="product_id" value="{{ $product_data->id }}">
                         <input type="hidden" name="username" value="{{ session("user")->username }}">
-                        <button type="submit" class="like"><img alt="like" src="{{asset('imgs/purpleHeart.png')}}"></button>
-                        </form>
-                    @else
-                        <button class="like"><img alt="like" src="{{asset('imgs/purpleHeart.png')}}"></button>
-                    @endif
+                        <button onclick="addToCart('{{route('ajax.addToCart')}}')" type="submit" class="like"><img
+                                    alt="like"
+                                    src="{{asset('imgs/purpleHeart.png')}}"></button>
                 </span>
                 <div class="delivery-status">
                     @if($product_data->amount > 0)
@@ -151,7 +146,9 @@
         @endforeach
     </div>
     <div class="show-more-div block">
-        <button onclick="show_more_products('{{route("ajax.getproducts")}}')" class="show-more container-item">Показати ще</button>
+        <button onclick="show_more_products('{{route("ajax.getproducts")}}')" class="show-more container-item">Показати
+            ще
+        </button>
     </div>
     @include('components.footer')
     @include("components.modals")

@@ -36,7 +36,6 @@ const show_more_products = (url) => {
     }).then(data => {
         if (data.products.length === 0) return;
 
-        const session_user = data.session_user;
         const products = data.products;
 
         products.forEach((product) => {
@@ -58,7 +57,6 @@ const show_more_products = (url) => {
                     </div>
                     <div class="buttons">
                         <button class="buy">Купити</button>
-                        ${session_user ? `
                         <form method="POST" action="/addToCart">
                             <input type="hidden" name="_token" value="${getCsrfToken()}">
                             <input type="hidden" name="product_id" value="${product.id}">
@@ -66,11 +64,6 @@ const show_more_products = (url) => {
                             <img src="/imgs/heartWithOutBG.png" alt="like" class="like">
                             </button>
                         </form>
-                        ` : `
-                            <button class="like" disabled>
-                                <img src="/imgs/heartWithOutBG.png" alt="like" class="like">
-                            </button>
-                        `}
                     </div>
                 </div>
             `;
@@ -177,6 +170,29 @@ const registration = (url) => {
 
         errorsDiv.classList.add("green");
         errorsDiv.innerHTML = data.message;
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+const addToCart = (url) => {
+    const btn = event.target;
+    const product_id = btn.parentNode.parentNode.querySelector(".product_id").value;
+
+    let data = {
+        product_id: product_id,
+    };
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': getCsrfToken()
+        },
+        body: JSON.stringify(data)
+    }).then(response => {
+        if (response.ok) return response.json();
+        throw new Error('Network response was not ok.');
     }).catch(error => {
         console.error('Error:', error);
     });

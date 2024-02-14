@@ -180,18 +180,11 @@
                             </div>
                             <div class="buttons">
                                 <button class="buy">Купити</button>
-                                @if(session("user"))
-                                    <form method="POST" action="{{ route('addToCart') }}">
-                                        @csrf
-                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <button type="submit" class="like"><img
-                                                src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like">
-                                        </button>
-                                    </form>
-                                @else
-                                    <button class="like"><img src="{{asset('imgs/heartWithOutBG.png')}}" alt="like"
-                                                              class="like"></button>
-                                @endif
+                                <input class="product_id" type="hidden" name="product_id" value="{{ $product->id }}">
+                                <button onclick="addToCart('{{route("ajax.addToCart")}}')" type="submit" class="like">
+                                    <img
+                                        src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like">
+                                </button>
                             </div>
                         </div>
                     @endforeach
