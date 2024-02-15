@@ -57,13 +57,10 @@ const show_more_products = (url) => {
                     </div>
                     <div class="buttons">
                         <button class="buy">Купити</button>
-                        <form method="POST" action="/addToCart">
-                            <input type="hidden" name="_token" value="${getCsrfToken()}">
-                            <input type="hidden" name="product_id" value="${product.id}">
-                            <button type="submit" class="like">
+                        <input class="product_id" type="hidden" name="product_id" value="${product.id}">
+                        <button onclick="addToCart('/ajax/addToCart')" type="submit" class="like">
                             <img src="/imgs/heartWithOutBG.png" alt="like" class="like">
-                            </button>
-                        </form>
+                        </button>
                     </div>
                 </div>
             `;
