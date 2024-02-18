@@ -9,6 +9,7 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/scss/imports.scss',
                 'resources/scss/cart.scss',
+                'public/js/inputmask.js',
             ],
             refresh: true,
         }),
