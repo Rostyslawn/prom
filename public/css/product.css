@@ -401,7 +401,7 @@ body, .nav, .nav form input {
 }
 
 /* Another products */
-.another-products {
+.another-products .items {
     margin-top: 50px;
     padding: 0 250px;
     display: grid;
@@ -451,6 +451,11 @@ body, .nav, .nav form input {
     background: #7b04df;
     width: 120px;
     height: 32px;
+}
+
+.another-products .buttons button.like {
+    background: none;
+    border: none;
 }
 
 .another-products .buttons .like {

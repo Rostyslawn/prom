@@ -121,29 +121,35 @@
             </div>
         </div>
     </div>
-    <div class="another-products">
-        @foreach($another_products as $product)
-            <div class="item">
-                <img src="{{$product->img}}" alt="{{$product->name}}" class="product_img">
-                <div class="head">
-                    <div class="prices">
-                        @if($product->sale)
-                            <div class="old-price">{{ $product->price }} ₴</div>
-                            <div class="sale">{{ $product->sale }} ₴</div>
-                        @else
-                            <div class="price">{{ $product->price }} ₴</div>
-                        @endif
+    <div class="for-you another-products">
+        <div class="items">
+            @foreach($another_products as $product)
+                <div class="item">
+                    <img src="{{$product->img}}" alt="{{$product->name}}" class="product_img">
+                    <div class="head">
+                        <div class="prices">
+                            @if($product->sale)
+                                <div class="old-price">{{ $product->price }} ₴</div>
+                                <div class="sale">{{ $product->sale }} ₴</div>
+                            @else
+                                <div class="price">{{ $product->price }} ₴</div>
+                            @endif
+                        </div>
+                        <div class="product_name">
+                            <a href="{{route('product', ["product_name" => $product->name])}}">{{ $product->name }}</a>
+                        </div>
                     </div>
-                    <div class="product_name">
-                        <a href="{{route('product', ["product_name" => $product->name])}}">{{ $product->name }}</a>
+                    <div class="buttons">
+                        <button>Купити</button>
+                        <input class="product_id" type="hidden" name="product_id" value="{{ $product->id }}">
+                        <button onclick="addToCart('{{route("ajax.addToCart")}}')" type="submit" class="like">
+                            <img
+                                src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like">
+                        </button>
                     </div>
                 </div>
-                <div class="buttons">
-                    <button>Купити</button>
-                    <img src="{{asset('imgs/heartWithOutBG.png')}}" alt="like" class="like">
-                </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
     <div class="show-more-div block">
         <button onclick="show_more_products('{{route("ajax.getproducts")}}')" class="show-more container-item">Показати

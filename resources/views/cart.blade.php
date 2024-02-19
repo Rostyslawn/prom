@@ -20,7 +20,9 @@
                                 <div class="price">{{ $product->price }} ₴</div>
                             @endif
                         </div>
-                        <div class="product-name">{{ $product->name }}</div>
+                        <div class="product-name"><a
+                                href="{{route("product", ["product_name" => $product->name])}}">{{ $product->name }}</a>
+                        </div>
                         <button class="buy">Замовити</button>
                         <form action="{{route('deleteFromCart', ["product_id" => $product->id])}}" method="POST">
                             @csrf
