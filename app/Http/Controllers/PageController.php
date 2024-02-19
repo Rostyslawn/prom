@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\MostPopularProducts;
 use App\Models\Products;
 use Illuminate\Http\Request;
@@ -21,10 +22,13 @@ class PageController extends Controller
             ->distinct()
             ->get();
 
-        $categories = $products->groupBy('category_id');
+        $productsGrouped = $products->groupBy('category_id');
+
+        $categories = Category::limit(14)->get();
 
         return view('index')
+            ->with("Categories", $categories)
             ->with("AllProducts", $products)
-            ->with('AllProductsGrouped', $categories);
+            ->with('AllProductsGrouped', $productsGrouped);
     }
 }

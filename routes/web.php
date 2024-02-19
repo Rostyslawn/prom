@@ -9,6 +9,8 @@ use App\Http\Controllers\CartController;
 use \App\Http\Controllers\addToCart;
 use \App\Http\Controllers\AjaxController;
 use \App\Http\Controllers\deleteFromCartController;
+use \App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,7 @@ use \App\Http\Controllers\deleteFromCartController;
 Route::get('/', [PageController::class, "index"])->name("index");
 Route::get('/product', [ProductController::class, "index"])->name("product");
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::get('/category', [CategoryController::class, 'index'])->name('category');
 Route::post("/deleteFromCart", [deleteFromCartController::class, 'deleteFromCart'])->name('deleteFromCart');
 
 // AJAX

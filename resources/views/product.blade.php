@@ -5,7 +5,7 @@
 @section("title", $product_data->name)
 @section("content")
     <div class="category-nav block">
-        <div class="item catalog"><a href="#">Каталог товарiв</a></div>
+        <div class="item catalog"><a href="{{ route("index") }}">Каталог товарiв</a></div>
         @foreach($bread as $category)
             @if(!$category)
                 @break

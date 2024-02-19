@@ -10,60 +10,11 @@
     <div class="header block">
         <div class="container">
             <div id="left-side" class="left-side categories">
-                <div class="item">
-                    <a href="#">Military</a>
-                </div>
-                <div class="item">
-                    <a href="#">Супермаркет Пром</a>
-                </div>
-                <div class="item">
-                    <a href="#">Красата та здоров'я</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Дiм i сад</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Одяг та взуття</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Технiка та електронiка</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Товари для дiтей</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Авто-, мото</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Подарунки, хобi, книги</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Аксесуари та прикраси</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Матерiали для ремонту</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Спорт i вiдпочинок</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Медикаменти та медичнi товари</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
-                <div class="item">
-                    <a href="#">Домашнi тварини та зоотовари</a>
-                    <img alt="arrow" src="{{asset('imgs/arrow.png')}}">
-                </div>
+                @foreach($Categories as $category)
+                    <div class="item">
+                        <a href="{{ route('category', ["category_id" => $category->id]) }}">{{ $category->name }}</a>
+                    </div>
+                @endforeach
             </div>
             <div class="carousel">
                 <div onclick="main_ch_to_l()" class="btn btn-left">
