@@ -13,7 +13,6 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        // Seed Categories from fake(CategoryFactory)
-        Category::factory()->times(30)->create();
+        Category::factory()->times(100)->create();
     }
 }

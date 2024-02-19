@@ -16,15 +16,16 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
-        // Creating faker
         $faker = \Faker\Factory::create();
         $randomText = $faker->sentence($nbWords = 3, $variableNbWords = true);
-        $randomNums = $faker->numberBetween(1, 50);
+        $randomNums = $faker->numberBetween(1, 100);
 
-        // Write random names for table Category and write random sort
+        $randomParentId = rand(0, 1) ? null : $faker->numberBetween(1, 100);
+
         return [
             "name" => $randomText,
             "sort" => $randomNums,
+            "parent_id" => $randomParentId,
         ];
     }
 }

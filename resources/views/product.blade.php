@@ -6,10 +6,13 @@
 @section("content")
     <div class="category-nav block">
         <div class="item catalog"><a href="#">Каталог товарiв</a></div>
-        <div class="item arrow"><img alt=">" src="{{asset("imgs/arrow.png")}}"></div>
-        <div class="item catalog-name"><a href="#">Краса</a></div>
-        <div class="item arrow"><img alt=">" src="{{asset("imgs/arrow.png")}}"></div>
-        <div class="item catalog-name"><a href="#">Шампунi</a></div>
+        @foreach($bread as $category)
+            @if(!$category)
+                @break
+            @endif
+            <div class="item arrow"><img alt=">" src="{{asset("imgs/arrow.png")}}"></div>
+            <div class="item catalog-name"><a href="#">{{$category->name}}</a></div>
+        @endforeach
     </div>
     <div class="main block">
         <div class="container characteristics">
@@ -70,10 +73,12 @@
                 <span class="head">
                     <div class="product_name">{{$product_data->name}}, {{$product_data->amount}}шт.</div>
                         <input class="product_id" type="hidden" name="product_id" value="{{ $product_data->id }}">
+                        @if(session("user"))
                         <input type="hidden" name="username" value="{{ session("user")->username }}">
+                    @endif
                         <button onclick="addToCart('{{route('ajax.addToCart')}}')" type="submit" class="like"><img
-                                    alt="like"
-                                    src="{{asset('imgs/purpleHeart.png')}}"></button>
+                                alt="like"
+                                src="{{asset('imgs/purpleHeart.png')}}"></button>
                 </span>
                 <div class="delivery-status">
                     @if($product_data->amount > 0)
@@ -117,12 +122,7 @@
         </div>
     </div>
     <div class="another-products">
-        @foreach($another_products as $categoryId => $products)
-            @php
-                $uniqueProducts = $products->unique("id")->take(20);
-            @endphp
-        @endforeach
-        @foreach($uniqueProducts as $product)
+        @foreach($another_products as $product)
             <div class="item">
                 <img src="{{$product->img}}" alt="{{$product->name}}" class="product_img">
                 <div class="head">

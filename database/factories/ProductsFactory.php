@@ -16,10 +16,13 @@ class ProductsFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
     public function definition(): array
     {
+        $sellers = Sellers::all();
+        $category = Category::all();
+
         $faker = \Faker\Factory::create();
-        $randomText = $faker->sentence($nbWords = 3, $variableNbWords = true);
         $randomPrice = $faker->numberBetween(1, 1000);
         $randomSale = rand(0, 1) ? null : $faker->numberBetween(1, 1000);
 
@@ -27,14 +30,14 @@ class ProductsFactory extends Factory
             'name' => $faker->name,
             'slug' => $faker->slug,
             'description' => $faker->realTextBetween(300, 600),
-            'seller' => Sellers::inRandomOrder()->first()->name,
+            'seller' => $sellers->shuffle()->first()->name,
             'country_of_origin' => $faker->country,
             'img' => $faker->imageUrl,
             "price" => $randomPrice,
             "sale" => $randomSale,
             'amount' => $faker->numberBetween(1, 100),
             'likes' => $faker->numberBetween(1, 100),
-            "category_id" => Category::inRandomOrder()->first()->id,
+            "category_id" => $category->shuffle()->first()->id,
         ];
     }
 }
