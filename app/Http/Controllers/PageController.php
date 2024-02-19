@@ -21,8 +21,9 @@ class PageController extends Controller
             ->get();
 
         $categories = $products->groupBy('category_id');
-        
+
         return view('index')
-            ->with('AllProducts', $categories);
+            ->with("AllProducts", $products)
+            ->with('AllProductsGrouped', $categories);
     }
 }

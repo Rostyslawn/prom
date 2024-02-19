@@ -94,7 +94,7 @@
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to the left">
                     </div>
                     <div class="slider-wrapper carousels">
-                        @foreach($AllProducts->take(20) as $categoryId => $products)
+                        @foreach($AllProductsGrouped->take(20) as $categoryId => $products)
                             <div class="item">
                                 <div class="head">
                                     <div class="head_img"><img src="{{ $products->first()->img }}"></div>
@@ -133,11 +133,9 @@
                         <img src="{{asset('imgs/arrow.png')}}" alt="swap to left">
                     </div>
                     <div class="slider-wrapper carousels">
-                        @foreach($AllProducts as $categoryId => $products)
-                            @php
-                                $uniqueProducts = $products->unique('id')->take(20);
-                            @endphp
-                        @endforeach
+                        @php
+                            $uniqueProducts = $AllProducts->unique('id')->take(20);
+                        @endphp
                         @foreach($uniqueProducts as $product)
                             <div class="item">
                                 <div class="product_img">
@@ -157,11 +155,9 @@
             <h2 class="for-you-h2">Для тебе</h2>
             <div class="for-you container-item">
                 <div class="items">
-                    @foreach($AllProducts as $categoryId => $products)
-                        @php
-                            $uniqueProducts = $products->unique('id')->take(20);
-                        @endphp
-                    @endforeach
+                    @php
+                        $uniqueProducts = $AllProducts->unique('id')->take(20);
+                    @endphp
                     @foreach($uniqueProducts as $product)
                         <div class="item">
                             <img src="{{$product->img}}" alt="{{$product->name}}" class="product_img">
