@@ -11,7 +11,7 @@
                 @break
             @endif
             <div class="item arrow"><img alt=">" src="{{asset("imgs/arrow.png")}}"></div>
-            <div class="item catalog-name"><a href="#">{{$category->name}}</a></div>
+            <div class="item catalog-name"><a href="{{ route('category', ["category_id" => $category->id]) }}">{{$category->name}}</a></div>
         @endforeach
     </div>
     <div class="main block">

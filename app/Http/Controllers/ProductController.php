@@ -25,12 +25,16 @@ class ProductController extends Controller
         $bread_id = [];
         $bread_name = [];
 
-        do {
+        {
             $i = 0;
 
-            $parent_id = $categories[$parent_id-1]->parent_id ?? null;
-            $bread_id[] = $parent_id;
-        } while ($parent_id && $i++ < 8);
+            do {
+                $parent_id = $categories[$parent_id - 1]->parent_id ?? null;
+                $bread_id[] = $parent_id;
+
+                $i++;
+            } while ($parent_id && $i < 6);
+        }
 
         foreach ($bread_id as $id) {
             if(!$id)
