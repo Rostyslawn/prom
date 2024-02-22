@@ -14,11 +14,11 @@
             <div class="item catalog-name"><a href="{{ route('category', ["category_id" => $category->id]) }}">{{$category->name}}</a></div>
         @endforeach
     </div>
-    <div class="content">
+    <div class="content block">
         <div class="filters">
-            <div class="item active">За рейтингом</div>
-            <div class="item">Дешевше</div>
-            <div class="item">Дорожче</div>
+            <button class="item active">За рейтингом</button>
+            <button class="item">Дешевше</button>
+            <button class="item">Дорожче</button>
         </div>
         <div class="left-side">
 
@@ -27,4 +27,7 @@
 
         </div>
     </div>
+@endsection
+@section("scripts")
+    <script src="{{asset('js/filters.js')}}"></script>
 @endsection
