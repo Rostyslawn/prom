@@ -33,11 +33,10 @@ class CategoryController extends Controller
         }
 
         foreach ($bread_id as $id) {
-            if (!$id) {
+            if (!$id)
                 $bread_name[] = $categories->where("id", $category_id)->first();
-            } else {
+            else
                 $bread_name[] = $categories->where("id", $id)->first();
-            }
         }
 
         return view("category")

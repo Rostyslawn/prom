@@ -24,7 +24,7 @@ class PageController extends Controller
 
         $productsGrouped = $products->groupBy('category_id');
 
-        $categories = Category::limit(14)->get();
+        $categories = Category::limit(10)->get();
 
         return view('index')
             ->with("Categories", $categories)

@@ -101,6 +101,7 @@ button {
             height: 40px;
             border: 1px solid #c1c1d4;
             border-radius: 8px;
+            background-color: white;
             overflow: hidden;
 
             * {
@@ -108,9 +109,11 @@ button {
             }
 
             label {
+                background: white;
                 width: 100%;
 
                 input {
+                    background: white;
                     padding-left: 10px;
                     width: 100%;
 

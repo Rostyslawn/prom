@@ -70,7 +70,7 @@
             <span>Увійдіть, щоб додавати товари до бажаного, <br> писати продавцям і бачити свої замовлення</span>
             <div class="insert-number">Введіть телефон <span>*</span></div>
             <label>
-                <input type="text" name="login" placeholder="+380 (__) ___-__-__" class="telephone-number input-event">
+                <input type="text" name="login" placeholder="+380 (__) __-__-__" class="telephone-number input-event">
             </label>
             <div class="insert-password">Введiть пароль</div>
             <label>
@@ -118,7 +118,7 @@
             </label>
             <label class="phone-number">
                 <span>Номер телефону <span>*</span></span>
-                <input type="text" class="phone_number input-event" name="login" placeholder="+380 (__) ___-__-__">
+                <input type="text" class="phone_number input-event" name="login" placeholder="+380 (__) __-__-__">
             </label>
             <label>
                 <span>Пароль</span>

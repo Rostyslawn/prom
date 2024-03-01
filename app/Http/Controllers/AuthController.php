@@ -36,11 +36,8 @@ class AuthController extends Controller
         $data = User::where("phone_number", $phone)
             ->first();
 
-        if(!$data)
-            return response()->json(["error" => "Invalid phone number"]);
-
-        if(!Hash::check($password, $data->password))
-            return response()->json(["error" => "Invalid password"]);
+        if(!$data || !Hash::check($password, $data->password))
+            return response()->json(["error" => "Invalid phone number or password"]);
 
         session()->put("user", $data);
         return response()->json(["message" => "Login successful"]);
