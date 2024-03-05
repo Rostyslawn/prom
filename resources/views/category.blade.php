@@ -56,9 +56,32 @@
                     </div>
                 </div>
                 <div class="products">
-                    {{--            @foreach($products as $product)--}}
-
-                    {{--            @endforeach--}}
+                    @foreach($products as $product)
+                        <div class="product">
+                            <div class="product-img">
+                                <img alt="{{$product->name}}" src="{{$product->img}}">
+                            </div>
+                            <div class="product-name">
+                                {{$product->name}}
+                            </div>
+                            <div class="status">В наявностi</div>
+                            <div class="prices">
+                                @if($product->sale)
+                                    <div class="old-price">{{ $product->price }} ₴</div>
+                                    <div class="sale">{{ $product->sale }} ₴</div>
+                                @else
+                                    <div class="price">{{ $product->price }} ₴</div>
+                                @endif
+                            </div>
+                            <div class="buttons">
+                                <button class="buy">Купити</button>
+                                <button class="like"><img src="{{asset('imgs/likes.png')}}"></button>
+                            </div>
+                            <div class="seller">
+                                <span>{{$product->seller}}</span>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
