@@ -11,9 +11,9 @@
         <div class="container">
             <div id="left-side" class="left-side categories">
                 @foreach($Categories as $category)
-                    <div class="item">
-                        <a href="{{ route('category', ["category_id" => $category->id]) }}">{{ $category->name }}</a>
-                    </div>
+                    <a href="{{ route('category', ["category_id" => $category->id]) }}" class="item">
+                        <span>{{ $category->name }}</span>
+                    </a>
                 @endforeach
             </div>
             <div class="carousel">

@@ -76,7 +76,8 @@
                             <div class="buttons">
                                 <input type="hidden" class="product_id" value="{{$product->id}}">
                                 <button onclick="buyProduct('{{route("ajax.buy")}}')" class="buy">Купити</button>
-                                <button onclick="addToCart('{{route("ajax.addToCart")}}')" class="like"><img src="{{asset('imgs/likes.png')}}"></button>
+                                <button onclick="addToCart('{{route("ajax.addToCart")}}')" class="like"><img
+                                        src="{{asset('imgs/likes.png')}}"></button>
                             </div>
                             <div class="seller">
                                 <span>{{$product->seller}}</span>

@@ -14,7 +14,7 @@ class CategoryController extends Controller
         $categories = Category::all();
         $category = Category::where("id", $category_id)->first();
         $category_name = $category->name;
-        $category_products = Products::where("category_id", $category_id)->get();
+        $category_products = Products::where("category_id", $category_id)->limit(20)->get();
 
         $bread_id = [];
         $bread_name = [];
