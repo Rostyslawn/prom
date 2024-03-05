@@ -126,7 +126,7 @@
                                 </div>
                             </div>
                             <div class="buttons">
-                                <button class="buy">Купити</button>
+                                <button onclick="buyProduct('{{route("ajax.buy")}}')" class="buy">Купити</button>
                                 <input class="product_id" type="hidden" name="product_id" value="{{ $product->id }}">
                                 <button onclick="addToCart('{{route("ajax.addToCart")}}')" type="submit" class="like">
                                     <img

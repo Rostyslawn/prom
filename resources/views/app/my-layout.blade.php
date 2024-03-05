@@ -15,5 +15,6 @@
 @yield("scripts")
 <script src="{{asset('js/ajax.js')}}"></script>
 <script src="{{asset('js/modals.js')}}"></script>
+<script src="{{asset('js/buyProduct.js')}}"></script>
 </body>
 </html>

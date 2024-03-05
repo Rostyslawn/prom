@@ -94,7 +94,8 @@
                     <div class="price">{{$product_data->price}} ₴</div>
                 @endif
                 <div class="buttons">
-                    <button class="buy-product">
+                    <button onclick="buyProduct('{{route("ajax.buy")}}')" class="buy-product">
+                        <input type="hidden" class="product_id" value="{{$product_data->id}}">
                         <img src="{{asset('imgs/whitecart.png')}}">
                         <span>Купити</span>
                     </button>
