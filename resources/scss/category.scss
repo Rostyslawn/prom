@@ -172,7 +172,7 @@ body {
                 grid-gap: 10px;
 
                 .product {
-                    padding: 0 10px;
+                    padding: 0 15px;
                     padding-bottom: 10px;
                     background: white;
 
@@ -193,8 +193,7 @@ body {
                     }
 
                     .prices {
-                        margin-top: 5px;
-                        padding: 15px 0;
+                        padding: 10px 0;
 
                         .price {
                             font-weight: 600;
@@ -215,13 +214,15 @@ body {
                     .buttons {
                         display: flex;
                         align-items: center;
+                        justify-content: space-between;
 
                         .buy {
+                            font-weight: 600;
                             border: none;
                             border-radius: 10px;
                             background: #7b04df;
                             color: white;
-                            width: 150px;
+                            width: 170px;
                             padding: 5px 10px;
                         }
 
@@ -236,6 +237,10 @@ body {
                                 height: 100%;
                             }
                         }
+                    }
+
+                    .seller {
+                        margin-top: 5px;
                     }
                 }
             }

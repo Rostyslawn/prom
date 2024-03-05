@@ -74,8 +74,9 @@
                                 @endif
                             </div>
                             <div class="buttons">
-                                <button class="buy">Купити</button>
-                                <button class="like"><img src="{{asset('imgs/likes.png')}}"></button>
+                                <input type="hidden" class="product_id" value="{{$product->id}}">
+                                <button onclick="buyProduct('{{route("ajax.buy")}}')" class="buy">Купити</button>
+                                <button onclick="addToCart('{{route("ajax.addToCart")}}')" class="like"><img src="{{asset('imgs/likes.png')}}"></button>
                             </div>
                             <div class="seller">
                                 <span>{{$product->seller}}</span>
@@ -86,7 +87,9 @@
             </div>
         </div>
     </div>
+    @include("components.modals")
 @endsection
 @section("scripts")
     <script src="{{asset('js/filters.js')}}"></script>
+    <script src="{{asset('js/buyProduct.js')}}"></script>
 @endsection
