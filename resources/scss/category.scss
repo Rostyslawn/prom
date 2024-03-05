@@ -81,16 +81,13 @@ body {
             margin-top: 10px;
             display: grid;
             grid-template-columns: 22% auto;
-            //justify-content: space-between;
             grid-gap: 10px;
 
             .left-side {
-                //position: ;
                 display: flex;
                 flex-direction: column;
                 grid-gap: 25px;
                 padding: 20px;
-                //width: 22%;
                 height: auto;
                 max-height: 400px;
                 background: white;
@@ -173,14 +170,11 @@ body {
                 grid-template-columns: repeat(4, auto);
                 justify-content: space-between;
                 grid-gap: 10px;
-                //width: 88%;
 
                 .product {
                     padding: 0 10px;
                     padding-bottom: 10px;
                     background: white;
-                    //width: 265px;
-                    //height: 465px;
 
                     .product-img {
                         padding: 0 10px;
@@ -199,7 +193,6 @@ body {
                     }
 
                     .prices {
-                        //height: 37px;
                         margin-top: 5px;
                         padding: 15px 0;
 
