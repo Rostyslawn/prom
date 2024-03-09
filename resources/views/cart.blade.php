@@ -11,6 +11,7 @@
             @else
                 @foreach($cart as $product)
                     <div class="product">
+                        <input class="product_id" type="hidden" value="{{ $product->id }}">
                         <div class="product-img"><img src="{{ $product->img }}" alt="{{ $product->name }}"></div>
                         <div class="prices">
                             @if($product->sale)
@@ -23,7 +24,7 @@
                         <div class="product-name"><a
                                 href="{{route("product", ["product_name" => $product->name])}}">{{ $product->name }}</a>
                         </div>
-                        <button class="buy">Замовити</button>
+                        <button onclick="buyProduct('{{route("ajax.buy")}}')" class="buy">Замовити</button>
                         <form action="{{route('deleteFromCart', ["product_id" => $product->id])}}" method="POST">
                             @csrf
                             <button type="submit" class="delete-from-cart">Удалити из кошика</button>

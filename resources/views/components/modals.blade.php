@@ -19,7 +19,7 @@
         </div>
         <div class="item favorite">
             <img src="{{asset('imgs/heartWithOutBG.png')}}" class="icon" alt="Favorite">
-            <span>Бажане</span>
+            <span><a href="{{route('cart')}}">Бажане</a></span>
         </div>
         <div class="item reviews">
             <img src="{{asset('imgs/star.png')}}" class="icon" alt="My reviews">
