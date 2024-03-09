@@ -119,9 +119,34 @@ const authorization = (url) => {
             return;
         }
 
+        // fix reload
+        location.reload();
+
         errorsDiv.classList.add("green");
         errorsDiv.innerHTML = `Successful authorization`;
         document.querySelector(".auth").removeAttribute("onclick");
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+const logoff = (url) => {
+    fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': getCsrfToken()
+        }
+    }).then(response => {
+        if (response.ok) return response.json();
+        throw new Error('Network response was not ok.');
+    }).then(async(data) => {
+        if(data.message) {
+            // fix reload
+            location.reload();
+            makeMessage(data.message)
+        }
+        if(data.error) return makeError(data.error);
     }).catch(error => {
         console.error('Error:', error);
     });
@@ -152,7 +177,7 @@ const registration = (url) => {
     }).then(response => {
         if (response.ok) return response.json();
         throw new Error('Network response was not ok.');
-    }).then(data => {
+    }).then((data) => {
         if (data.errorValidator) {
             const errorValidator = data.errorValidator;
             errorsDiv.classList.add("red");

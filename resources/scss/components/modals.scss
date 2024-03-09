@@ -15,6 +15,13 @@
 }
 
 .modals {
+    .status {
+        span {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+
     .login-with-text {
         text-align: center;
     }

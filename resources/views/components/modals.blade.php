@@ -1,7 +1,11 @@
 <div class="modals">
     <div onclick="close_modals()" class="modal-bg"></div>
     <div class="login-menu menu">
-        <h3 class="status">Ви не авторизованi</h3>
+        @if(!session("user"))
+            <h3 class="status">Ви не авторизованi</h3>
+        @else
+            <h3 class="status">Ви вже авторизованi, <span onclick="logoff('{{route("ajax.logoff")}}')" class="unlogin">разлогiнитись?</span></h3>
+        @endif
         <button onclick="open_auth_menu()" class="registry-or-login">
             Увійти або зареєструватись
         </button>
