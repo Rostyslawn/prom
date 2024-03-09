@@ -8,7 +8,7 @@ class buyProduct extends Controller
 {
     public function buy(Request $request)
     {
-        if(!session("user")) return response()->json(["error" => "User not found"]);
+        if(!session("user")) return response()->json(["error" => "You are not logged in"]);
 
         $user_id = session('user')->id;
         $product_id = $request->product_id;

@@ -9,7 +9,7 @@ class addToCart extends Controller
 {
     public function addToCart(Request $request)
     {
-        if(!session("user")) return response()->json(["error" => "User not found"]);
+        if(!session("user")) return response()->json(["error" => "You are not logged in"]);
 
         $user_id = session("user")->id;
         $product_id = $request->input("product_id");

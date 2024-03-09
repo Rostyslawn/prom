@@ -190,6 +190,10 @@ const addToCart = (url) => {
     }).then(response => {
         if (response.ok) return response.json();
         throw new Error('Network response was not ok.');
+    }).then((data) => {
+        if(data.error) return makeError(data.error);
+
+        console.log("Product has been added to your cart")
     }).catch(error => {
         console.error('Error:', error);
     });

@@ -12,9 +12,11 @@
 <body>
 @include("components.nav")
 @yield("content")
+<div class="global-errors"></div>
 @yield("scripts")
 <script src="{{asset('js/ajax.js')}}"></script>
 <script src="{{asset('js/modals.js')}}"></script>
 <script src="{{asset('js/buyProduct.js')}}"></script>
+<script src="{{asset('js/errors.js')}}"></script>
 </body>
 </html>
