@@ -119,12 +119,8 @@ const authorization = (url) => {
             return;
         }
 
-        // fix reload
-        location.reload();
-
-        errorsDiv.classList.add("green");
-        errorsDiv.innerHTML = `Successful authorization`;
-        document.querySelector(".auth").removeAttribute("onclick");
+        window.sessionStorage.setItem("message", "Successful authorization");
+        location.reload(false);
     }).catch(error => {
         console.error('Error:', error);
     });
@@ -142,11 +138,9 @@ const logoff = (url) => {
         throw new Error('Network response was not ok.');
     }).then(async(data) => {
         if(data.message) {
-            // fix reload
-            location.reload();
-            makeMessage(data.message)
+            window.sessionStorage.setItem("message", data.message);
+            location.reload(false);
         }
-        if(data.error) return makeError(data.error);
     }).catch(error => {
         console.error('Error:', error);
     });
@@ -222,4 +216,19 @@ const addToCart = (url) => {
     }).catch(error => {
         console.error('Error:', error);
     });
+}
+
+window.onload = () => {
+    const message = window.sessionStorage.getItem("message");
+    const error = window.sessionStorage.getItem("error");
+
+    if(message) {
+        makeMessage(message);
+        window.sessionStorage.removeItem("message");
+    }
+
+    if(error) {
+        makeError(error);
+        window.sessionStorage.removeItem("error");
+    }
 }
