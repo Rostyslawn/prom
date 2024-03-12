@@ -1,4 +1,4 @@
-// addToCart, buyProduct
+// addToCart, buyProduct, authorization
 
 const errorDivParent = document.querySelector(".global-errors");
 

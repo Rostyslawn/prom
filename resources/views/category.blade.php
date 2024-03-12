@@ -28,7 +28,8 @@
                 <button class="season">Сезон</button>
             </div>
             <div class="container">
-                <div class="left-side">
+                <form onchange="filter(this)" action="{{ route('ajax.filter') }}" method="POST" class="left-side">
+                    @csrf
                     <button class="rate-filters">
                         <img src="{{asset('imgs/star.png')}}">
                         <span>
@@ -41,20 +42,34 @@
                     </div>
                     <div class="filters-2">
                         <div class="filter-parent">
-                            <button class="filter">В наявностi</button>
-                            <button class="filter">Знижка</button>
+                            <label class="filter">
+                                В наявностi
+                                <input name="instock" class="hidden-checkbox" type="checkbox">
+                            </label>
+                            <label class="filter">
+                                Знижка
+                                <input name="sale" class="hidden-checkbox" type="checkbox">
+                            </label>
                         </div>
-                        <button class="filter">Опт</button>
+                        <label class="filter">
+                            Опт
+                            <input name="wholesale" class="hidden-checkbox" type="checkbox">
+                        </label>
                     </div>
                     <div class="filters-price">
                         <span>Цiна, ₴</span>
                         <div class="select-price-between">
-                            <input type="text" placeholder="0" class="price min">
-                            <input type="text" placeholder="3333" class="price max">
+                            <label class="filter">
+                                <input type="text" placeholder="0" class="price min">
+                            </label>
+                            <label class="filter">
+                                <input type="text" placeholder="3333" class="price max">
+                            </label>
+{{--                        fix button    --}}
                             <button class="submit">Ок</button>
                         </div>
                     </div>
-                </div>
+                </form>
                 <div class="products">
                     @foreach($products as $product)
                         <div class="product">

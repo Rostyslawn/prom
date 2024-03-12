@@ -39,6 +39,14 @@ body {
     }
 }
 
+.hidden-checkbox {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
+
 .main {
     .content {
         margin-top: 15px;
@@ -91,7 +99,33 @@ body {
                 height: auto;
                 max-height: 400px;
                 background: white;
-                overflow-y: auto;
+                overflow-y: scroll;
+
+                &:hover {
+                    &::-webkit-scrollbar-thumb {
+                        background: #7d7d91;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background: #dcdcde;
+                    }
+                }
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    position: absolute;
+                    border: 4px solid transparent;
+                    border-radius: 10px;
+                    background: white;
+                }
+
+                &::-webkit-scrollbar-track {
+                    border: 4px solid transparent;
+                    background: white;
+                }
 
                 .rate-filters {
                     width: 100%;
@@ -183,6 +217,7 @@ body {
                         height: 250px;
 
                         img {
+                            object-fit: cover;
                             width: 100%;
                             height: 100%;
                         }
