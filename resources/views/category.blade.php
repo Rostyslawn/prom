@@ -6,13 +6,14 @@
 @section("content")
     <div class="category-nav block">
         <div class="item catalog"><a href="{{ route("index") }}">Каталог товарiв</a></div>
-        @foreach($bread as $category)
-            @if(!$category)
+        @foreach($bread as $categoryItem)
+            @if(!$categoryItem)
                 @break
             @endif
             <div class="item arrow"><img alt=">" src="{{asset("imgs/arrow.png")}}"></div>
             <div class="item catalog-name"><a
-                    href="{{ route('category', ["category_id" => $category->id]) }}">{{$category->name}}</a></div>
+                    href="{{ route('category', ["category_id" => $categoryItem->id]) }}">{{$categoryItem->name}}</a>
+            </div>
         @endforeach
     </div>
     <div class="main">
@@ -28,7 +29,10 @@
                 <button class="season">Сезон</button>
             </div>
             <div class="container">
-                <form onchange="filter(this)" action="{{ route('ajax.filter') }}" method="POST" class="left-side">
+                <form onchange="filter(this)"
+                      onsubmit="filter(this); return false"
+                      action="{{ route('ajax.filter') }}" method="POST" class="left-side">
+                    <input type="hidden" name="category_id" value="{{ $category->id }}">
                     @csrf
                     <button class="rate-filters">
                         <img src="{{asset('imgs/star.png')}}">
@@ -60,13 +64,12 @@
                         <span>Цiна, ₴</span>
                         <div class="select-price-between">
                             <label class="filter">
-                                <input type="text" placeholder="0" class="price min">
+                                <input type="text" placeholder="0" name="price-min" class="price min">
                             </label>
                             <label class="filter">
-                                <input type="text" placeholder="3333" class="price max">
+                                <input type="text" placeholder="3333" name="price-max" class="price max">
                             </label>
-{{--                        fix button    --}}
-                            <button class="submit">Ок</button>
+                            <button type="submit" class="submit">Ок</button>
                         </div>
                     </div>
                 </form>

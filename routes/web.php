@@ -12,6 +12,7 @@ use \App\Http\Controllers\deleteFromCartController;
 use \App\Http\Controllers\CategoryController;
 use \App\Http\Controllers\buyProduct;
 use \App\Http\Controllers\LogoffController;
+use \App\Http\Controllers\FilterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,5 @@ Route::name("ajax.")->prefix("ajax/")->group(function () {
     Route::match(["post", "get"], '/logoff', [LogoffController::class, "logoff"])->name("logoff");
     Route::post("/registration", [RegController::class, "reg"])->name("reg");
     Route::post("/buyproduct", [buyProduct::class, "buy"])->name("buy");
+    Route::post("/filter", [FilterController::class, "filter"])->name("filter");
 });

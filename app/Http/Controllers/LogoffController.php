@@ -12,7 +12,6 @@ class LogoffController extends Controller
 
         $userId = session("user")->id;
 
-        // fix
         session()->flush();
 
         return response()->json(["message" => "You were deauthorized"]);

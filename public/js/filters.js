@@ -7,6 +7,44 @@ buttons.forEach(button => {
     });
 });
 
+const draw = (data) => {
+    const productsDiv = document.querySelector(".products");
+    productsDiv.innerHTML = "";
+
+    data.forEach((product) => {
+        const productHtml = `
+                <div class="product">
+                            <div class="product-img">
+                                <img alt="${product.name}" src="${product.img}">
+                            </div>
+                            <div class="product-name">
+                                ${product.name}
+                            </div>
+                            <div class="status">В наявностi</div>
+                            <div class="prices">
+                                ${product.sale ? `
+                                    <div class="old-price">${product.price} ₴</div>
+                                    <div class="sale">${product.sale} ₴</div>
+                                ` : `
+                                    <div class="price">${product.price} ₴</div>
+                                `}
+                            </div>
+                            <div class="buttons">
+                                <input type="hidden" class="product_id" value="${product.id}">
+                                <button onclick="buyProduct('/ajax/buy')" class="buy">Купити</button>
+                                <button onclick="addToCart('/ajax/addToCart')" class="like"><img
+                                        src="/imgs/likes.png"></button>
+                            </div>
+                            <div class="seller">
+                                <span>${product.seller}</span>
+                            </div>
+                        </div>
+            `;
+
+        productsDiv.insertAdjacentHTML('beforeend', productHtml);
+    });
+}
+
 function filter(form) {
     const url = form.action;
     const formData = new FormData(form);
@@ -22,10 +60,7 @@ function filter(form) {
         if (response.ok) return response.json();
         throw new Error('Network response was not ok.');
     }).then((data) => {
-        if (data.error) return makeError(data.error);
-        if(data.message) return makeMessage(data.message); // fix
-
-        console.log(data);
+        draw(data.data);
     }).catch(error => {
         console.error('Error:', error);
     });

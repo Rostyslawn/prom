@@ -40,6 +40,7 @@ class CategoryController extends Controller
         }
 
         return view("category")
+            ->with("category", $category)
             ->with("categoryName", $category_name)
             ->with("bread", $bread_name)
             ->with("products", $category_products);
