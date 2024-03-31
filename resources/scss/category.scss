@@ -171,6 +171,10 @@ label {
                         padding: 10px 15px;
                         border: 1px solid #DADAE8;
                         border-radius: 10px;
+
+                        &.active {
+                            border: 1px solid black;
+                        }
                     }
                 }
 

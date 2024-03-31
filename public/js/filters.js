@@ -1,9 +1,17 @@
 const buttons = document.querySelectorAll(".filters .item");
+const filters = document.querySelectorAll(".filters-2 .filter");
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         buttons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
+    });
+});
+
+filters.forEach(filter => {
+    filter.addEventListener("click", () => {
+        // fix
+        filter.classList.add("active");
     });
 });
 

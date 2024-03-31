@@ -22,12 +22,16 @@ class FilterController extends Controller
             $products = $products->whereNotNull("sale");
         }
 
-        if($request->has("price-min")) {
+        if($request->has("price-min") && $request->input("price-min")) {
             $products = $products->where("price", ">=", $request->input("price-min"));
+        } else {
+            $products = $products->where("price", ">", 0);
         }
 
-        if($request->has("price-max")) {
+        if($request->has("price-max") && $request->input("price-max")) {
             $products = $products->where("price", "<=", $request->input("price-max"));
+        } else {
+            $products = $products->where("price", ">", 0);
         }
 
         $products = $products->limit(20)->get()->toArray();
