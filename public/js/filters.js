@@ -1,6 +1,8 @@
 const buttons = document.querySelectorAll(".filters .item");
 const filters = document.querySelectorAll(".filters-2 .filter");
 
+let timer = null;
+
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         buttons.forEach(btn => btn.classList.remove('active'));
@@ -9,9 +11,13 @@ buttons.forEach(button => {
 });
 
 filters.forEach(filter => {
+    let timer = null;
     filter.addEventListener("click", () => {
-        // fix
-        filter.classList.add("active");
+        if (timer) return;
+        timer = setTimeout(() => {
+            filter.classList.toggle("active");
+            timer = null;
+        }, 100);
     });
 });
 
@@ -58,7 +64,7 @@ function filter(form) {
     const formData = new FormData(form);
 
     fetch(url, {
-       method: "POST",
+        method: "POST",
         headers: {
             "X-Requested-With": "XMLHttpRequest",
             "X-CSRF-TOKEN": getCsrfToken(),
