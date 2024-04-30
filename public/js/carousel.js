@@ -8,28 +8,49 @@ const carousels = document.querySelectorAll(".carousels");
 carousels.forEach(slider => {
     const btnLeft = slider.parentNode.querySelector(".btn-left");
     const btnRight = slider.parentNode.querySelector(".btn-right");
-    const _el = slider.querySelectorAll(".item");
-    let _left = 0;
+    const items = slider.querySelectorAll(".item");
 
-    if(!btnRight || !btnLeft) return;
+    let offset = 0;
 
-    // FIX
-    btnLeft.addEventListener("click", () => {
-        if(_left >= 0)
-            return;
+    if (!btnRight || !btnLeft) return;
 
-        _left += 100;
-        slider.style.left = _left + "%";
-    });
+    const firstChild = slider.children[0];
+    const itemStyle = window.getComputedStyle(firstChild);
+    const sliderStyle = window.getComputedStyle(slider);
+
+    const itemWidth = parseInt(itemStyle.getPropertyValue("width"));
+    const itemMargin = parseInt(sliderStyle.getPropertyValue("grid-row-gap"));
+
+    const itemTotalWidth = itemWidth + itemMargin;
+    const totalWidth = itemTotalWidth * items.length;
+    const carouselWidth = slider.clientWidth;
+
+    const maxOffset = Math.max(0, totalWidth - carouselWidth);
 
     btnRight.addEventListener("click", () => {
-        if(_left <= -(_el.length - 1) * 100)
+        if (offset >= maxOffset)
             return;
 
-        _left -= 100;
-        slider.style.left = _left + "%";
+        offset += itemTotalWidth;
+
+        if (offset > maxOffset)
+            offset = maxOffset;
+
+        slider.style.transform = `translateX(-${offset}px)`;
+    });
+
+    btnLeft.addEventListener("click", () => {
+        if (offset <= 0)
+            return;
+
+        offset -= itemTotalWidth;
+        if (offset < 0)
+            offset = 0;
+
+        slider.style.transform = `translateX(-${offset}px)`;
     });
 });
+
 
 const setTimer = () => {
     if (!timeOutSet) return;
