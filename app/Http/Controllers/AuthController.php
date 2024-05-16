@@ -17,16 +17,6 @@ class AuthController extends Controller
             'password' => 'required | string | min: 4 | max: 16',
         ]);
 
-//        $errors = $validator->errors()->getMessages();
-
-//        foreach ($errors as $field => $messages) {
-//            foreach ($messages as $message) {
-//                echo "Поле: $field - Ошибка: $message <br>";
-//            }
-//        }
-
-//        if(count($errors)) return back()->with($errors);
-
         if($validator->fails())
             return response()->json(["errorValidator" => $validator->errors()]);
 

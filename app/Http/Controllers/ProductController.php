@@ -14,11 +14,12 @@ class ProductController extends Controller
         $categories = Category::all();
         $product_data = Products::where("name", $product_name)->first();
         $sellers_data = Sellers::where("name", $product_data->seller)->first();
-        $products = Products::// inRandomOrder()
-            leftJoin("categories", "categories.id", "products.category_id")
-            ->select("products.*", "categories.name as category_name")
-            ->distinct()
-            ->get(50);
+        $products = Products::
+            inRandomOrder()
+                ->leftJoin("categories", "categories.id", "products.category_id")
+                ->select("products.*", "categories.name as category_name")
+                ->distinct()
+                ->get(50);
         $another_products = $products->unique("id")->shuffle()->take(20);
 
         $parent_id = $product_data->category_id;
